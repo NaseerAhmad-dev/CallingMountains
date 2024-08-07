@@ -1,0 +1,17 @@
+
+<div class="app-wrapper mx-auto d-flex flex-column " >
+    <app-header class="mb-1"></app-header>
+    <div class="w-85 mx-auto p-4">
+        <app-herosection></app-herosection>
+        <app-packages></app-packages>
+        <app-places-to-visit></app-places-to-visit>
+        <app-client-reviews></app-client-reviews>
+        <app-web-footer></app-web-footer>
+    </div>
+    
+    <div class="chaticon" (click)="openWhatsapp()">
+          <img [src]="chatIconUrl" alt="chatIcon" width="100" height="100">
+    </div>
+</div>
+
+

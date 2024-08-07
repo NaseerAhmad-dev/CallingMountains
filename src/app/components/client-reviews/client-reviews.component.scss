@@ -1,0 +1,39 @@
+.review-container {
+    position: relative;
+    height: 250px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.review-card {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.review-card.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.review-card.previous {
+    transform: translateX(-100%);
+}
+
+.review-card.next {
+    transform: translateX(100%);
+}
+
+// .left-button, .right-button {
+//     top: 50%;
+//     transform: translateY(-50%);
+// }
+
+// .left-button {
+//     left: -50px; /* Adjust as needed */
+// }
+
+// .right-button {
+//     right: -50px; /* Adjust as needed */
+// }

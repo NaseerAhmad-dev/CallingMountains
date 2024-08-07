@@ -1,0 +1,62 @@
+
+.card {
+   transition: all 0.2s ease-in-out;
+   border-radius: 8px;
+ }
+ 
+ .card:hover {
+   cursor: pointer;
+   box-shadow: 3px 0 5px rgba(206, 206, 206, 0.1), -3px 0 5px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
+   transform: scale(1.01);
+   border-radius: 8px;
+ }
+.badge {
+   right: -10px;
+}
+
+.tour_price {
+   background-color: #EAB308;
+   position: relative;
+   bottom: 40px;
+   left: 0;
+   padding: 3px 10px 2px 10px;
+   color: #fff;
+   font-weight: 700;
+   font-size: 15px;
+   -webkit-transition-duration: 0.2s;
+   -moz-transition-duration: 0.2s;
+   -o-transition-duration: 0.2s;
+   transition-duration: 0.2s;
+
+}
+.badge{
+   background-color: #247c2a;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   z-index: 1;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: manrope bold, sans-serif;
+    font-size: 14px;
+    line-height: 1.7rem;
+    display: inline-block;
+}
+.highlighted{
+   text-decoration: underline;
+   margin-bottom: 2px;
+
+}
+.clickable{
+   cursor: pointer;
+}
+ 
+ @media (min-width: 768px) { /* Bootstrap 'md' breakpoint */
+   .w-85 {
+     width: 85%;
+   }
+   .p-4{
+      padding: 0px;
+   }
+ }

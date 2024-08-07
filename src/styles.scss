@@ -1,0 +1,47 @@
+html{
+	box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*, *:after,*:before{
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+
+    background: linear-gradient(135deg, #c7a9e9, #a1c4fd);
+}
+
+
+
+.w-85 {
+  width: 100%;
+}
+
+.clickable{
+  cursor: pointer;
+}
+:root {
+  --bs-navbar-color: rgba(250, 248, 248, 0.55); /* Change the navbar color */
+  --bs-navbar-hover-color: rgba(0, 0, 0, 0.75); /* Change the hover color */
+  --bs-navbar-disabled-color: rgba(0, 0, 0, 0.25); /* Change the disabled color */
+  --bs-navbar-active-color: #000; /* Change the active color */
+  --bs-navbar-brand-color: #000; /* Change the brand color */
+  --bs-navbar-brand-hover-color: #333; /* Change the brand hover color */
+  --primary-color:
+}
+
+
+@media (min-width: 768px) { /* Bootstrap 'md' breakpoint */
+  .w-85 {
+    width: 85%;
+  }
+  .p-4{
+     padding: 0px;
+  }
+}

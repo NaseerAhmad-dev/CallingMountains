@@ -1,0 +1,70 @@
+
+  <section class="sticky-top desktop-navbar d-none d-md-block">
+    <nav class="header d-flex justify-content-around align-items-center" aria-label="header">
+      <div class="clickable">
+        <a href="#home">
+          <img src="../../../assets/logo.png" alt="logo" height="50" width="90">
+        </a>
+      </div>
+      <div class="nav-items">
+        <ul class="d-flex justify-content-between m-0 gap-5 list-style-none cursor-pointer">
+          <a href="#" [style.color]="'#5C4033'" class="text-decoration-none">
+            <li>Home</li>
+          </a>
+          <a href="#destination" [style.color]="'#5C4033'" class="text-decoration-none">
+            <li>Destinations</li>
+          </a>
+          <a href="#packages" [style.color]="'#5C4033'" class="text-decoration-none">
+            <li>Popular Plans</li>
+          </a>
+          <a href="#about" [style.color]="'#5C4033'" class="text-decoration-none">
+            <li>About Us</li>
+          </a>
+          <a href="#footer" [style.color]="'#5C4033'" class="text-decoration-none">
+            <li>Contact Us</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+  <section class="mobile-navbar d-md-none">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-style">
+        <div class="d-flex justify-content-between align-items-center w-100 p-2">
+          <div class="p-3">
+            <a href="#home">
+              <img src="../../../assets/logo.png" alt="logo" height="50" width="90">
+            </a>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                <img src="../../../assets/menu.svg" height="40" width="40" alt="Menu">
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="p-2 collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" [style.color]="'#845EC2'"href="#home" >Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [style.color]="'#845EC2'" href="#destination" >Destinations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [style.color]="'#845EC2'" href="#packages" >Popular Plans</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [style.color]="'#845EC2'" href="#about" >About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [style.color]="'#845EC2'" href="#contact" >Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </section>
+
+

@@ -1,0 +1,19 @@
+.app-wrapper{
+    // background: linear-gradient(to right, #F5F5F5, #E0E0E0);
+}
+.chaticon {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+@media (max-width: 767px) {
+    .chaticon {
+        width: 80px; /* Adjust size for mobile */
+        height: 80px; /* Adjust size for mobile */
+        bottom: 30%; /* Adjust position for mobile */
+        right: 10px; /* Adjust position for mobile */
+    }
+}

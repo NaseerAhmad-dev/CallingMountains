@@ -1,0 +1,56 @@
+
+
+.content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the overlay */
+}
+
+.cta-button {
+    background-color: #EAB308; /* Button color */
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #EAB308; /* Button hover color */
+}
+
+// .blurred {
+//     filter: blur(3px); /* Adjust the blur amount as needed */
+// }
+
+/* background-video.component.css */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  #backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #247c2a;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1;
+  }
+  
