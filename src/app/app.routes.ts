@@ -1,7 +1,9 @@
 
 import { Routes } from '@angular/router';
-import { PackagesComponent } from './components/packages/packages.component';
+import { DisplayPackageComponent } from './components/display-package/display-package.component';
+import { HomeComponetComponent } from './components/home-componet/home-componet.component';
 
 export const routes: Routes = [
-    // {path: 'view-details' , component:PackagesComponent}
+    { path: '', component: HomeComponetComponent },
+    { path: 'view-details', component: DisplayPackageComponent }
 ];

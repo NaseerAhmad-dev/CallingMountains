@@ -12,17 +12,10 @@ import { HerosectionComponent } from './components/herosection/herosection.compo
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, ClientReviewsComponent, BannerComponent, PackagesComponent, CarouselComponent, PlacesToVisitComponent,HerosectionComponent,  WebFooterComponent],
+  imports: [HeaderComponent,RouterOutlet, ClientReviewsComponent, BannerComponent, PackagesComponent, CarouselComponent, PlacesToVisitComponent,HerosectionComponent,  WebFooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'MountainsCalling';
-  chatIconUrl = 'https://www.logo.wine/a/logo/WhatsApp/WhatsApp-Logo.wine.svg';
-
-  
- openWhatsapp = () => {
-  const Message = "I want to book a travel package";
-  window.open(`https://wa.me/+918491015362?text=${Message}`, "_blank");
-};
 }

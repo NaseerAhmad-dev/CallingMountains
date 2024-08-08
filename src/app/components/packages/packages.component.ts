@@ -5,13 +5,14 @@ import { ButtonModule } from 'primeng/button';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { HerosectionComponent } from "../herosection/herosection.component";
 import { Router } from '@angular/router';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-packages',
   standalone: true,
   imports: [CommonModule, CardModule, ButtonModule, CarouselComponent, HerosectionComponent],
   templateUrl: './packages.component.html',
-  styleUrl: './packages.component.scss'
+  styleUrl: './packages.component.scss',
 })
 export class PackagesComponent {
   constructor(private router:Router){}
@@ -95,18 +96,29 @@ export class PackagesComponent {
   ]
   ngOnInit(){
     this.packsToDisplay = JSON.parse(JSON.stringify(this.packagesTypes))
+    this.packsToDisplay = [...this.packagesTypes];
   }
 
-  filterPacks(packId:number){
-      this.active = packId;
-      if(packId === 0)
-        this.packsToDisplay = JSON.parse(JSON.stringify(this.packagesTypes))
-      else 
-        this.packsToDisplay = this.packagesTypes.filter(pack => pack.id === packId);
+
+  filterPacks(packId: number) {
+    this.active = packId;
+    if (packId === 0) {
+      this.packsToDisplay = [...this.packagesTypes];
+    } else {
+      this.packsToDisplay = this.packagesTypes.filter(pack => pack.id === packId);
     }
+  }
+
+  // filterPacks(packId:number){
+  //     this.active = packId;
+  //     if(packId === 0)
+  //       this.packsToDisplay = JSON.parse(JSON.stringify(this.packagesTypes))
+  //     else 
+  //       this.packsToDisplay = this.packagesTypes.filter(pack => pack.id === packId);
+  //   }
 
     viewPack(pack: object){
-      // this.router.navigate(['view-details'])
+      this.router.navigate(['view-details'])
     }
 
 }
