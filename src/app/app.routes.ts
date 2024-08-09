@@ -4,6 +4,6 @@ import { DisplayPackageComponent } from './components/display-package/display-pa
 import { HomeComponetComponent } from './components/home-componet/home-componet.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponetComponent },
+    { path: '', pathMatch: 'full',   component: HomeComponetComponent },
     { path: 'view-details', component: DisplayPackageComponent }
 ];

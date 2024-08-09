@@ -24,8 +24,10 @@
     }
     40% {
         transform: translateY(-20px); /* Move up more */
+        transform: translateX(-10px);/* Move right more */
     }
     60% {
         transform: translateY(-10px); /* Move up less */
     }
+
 }

@@ -1,12 +1,15 @@
-<section class="p-md-4">
+<section class="p-md-4 bg-packages d-flex flex-column align-items-center justify-content-between" style="border:5px solid rgb(240, 16, 240)">
+  <div class="packages-title text-dark mx-auto">
+    Our Best Selling Packages
+  </div>
   <nav class="nav nav-pills d-flex flex-wrap pl-md-2 mb-3 col-12 my-2">
     <a class="nav-link rounded clickable pe-auto" [ngClass]="{'highlighted': active === 0}" aria-current="page" (click)="filterPacks(0)">All </a>
     <a class="nav-link rounded clickable pe-auto" [ngClass]="{'highlighted': active === 1}" aria-current="page" (click)="filterPacks(1)">Solo </a>
     <a class="nav-link rounded clickable pe-auto" [ngClass]="{'highlighted': active === 2}" (click)="filterPacks(2)">Couple </a>
     <a class="nav-link rounded clickable pe-auto" [ngClass]="{'highlighted': active === 3}" (click)="filterPacks(3)">Family</a>
   </nav>
-  <div id="packages" class="packages-wrapper rounded d-flex flex-wrap row">
-    <div class="my-2 col-md-4" *ngFor="let packagesType of packsToDisplay">
+  <div id="packages" class="packages-wrapper rounded d-flex  p-4 flex-wrap row">
+    <div class="my-2 col-md-3" *ngFor="let packagesType of packsToDisplay">
       <div class="card" (click)="viewPack(packagesType)">
         <div class="">
           <span class="badge">4.5 / 5</span>

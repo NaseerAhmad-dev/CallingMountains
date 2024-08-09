@@ -1,12 +1,12 @@
-
 .card {
    transition: all 0.2s ease-in-out;
    border-radius: 8px;
+   box-shadow: --point-box-shadow;
  }
  
  .card:hover {
    cursor: pointer;
-   box-shadow: 3px 0 5px rgba(206, 206, 206, 0.1), -3px 0 5px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
+   box-shadow:  --point-shadow-hover;
    transform: scale(1.01);
    border-radius: 8px;
  }
