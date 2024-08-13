@@ -2,20 +2,23 @@
    transition: all 0.2s ease-in-out;
    border-radius: 8px;
    box-shadow: --point-box-shadow;
+   background: linear-gradient(180deg, #FFFFFF 10%, #F0F2F5 60%, #FFFFFF 90%);
  }
  
  .card:hover {
    cursor: pointer;
    box-shadow:  --point-shadow-hover;
-   transform: scale(1.01);
+   transform: scale(1.03);
    border-radius: 8px;
  }
-.badge {
-   right: -10px;
-}
+
+ .card-img-top{
+   height: 300px;
+ }
+
 
 .tour_price {
-   background-color: #EAB308;
+   background-color: #08ead3d6;
    position: relative;
    bottom: 40px;
    left: 0;
@@ -30,17 +33,17 @@
 
 }
 .badge{
-   background-color: #247c2a;
+   background-color: chocolate;
    position: absolute;
    top: 10px;
    right: 10px;
    z-index: 1;
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.7rem;
-    display: inline-block;
+   color: #fff;
+   padding: 2px 8px;
+   border-radius: 4px;
+   font-size: 14px;
+   line-height: 1.7rem;
+   display: inline-block;
 }
 .highlighted{
    text-decoration: underline;
@@ -58,4 +61,7 @@
    .p-4{
       padding: 0px;
    }
+   .card-img-top{
+      height: 200px;
+    }
  }

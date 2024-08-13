@@ -35,28 +35,28 @@ export class ClientReviewsComponent {
             id: 1,
             name: "Naseer Ahmad",
             image: "assets/slide-3.jpg",
-            location: "Karachi, Pakistan",
+            location: "Sopore, Kashmir",
             review: "An unforgettable trip! The city’s vibrant culture and stunning architecture were beyond my expectations."
         },
         {
             id: 2,
-            name: "Ayesha Khan",
+            name: "Inayat Khan",
             image: "assets/slider-1.jpg",
-            location: "Lahore, Pakistan",
+            location: "Srinagar, Pakistan",
             review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
         },
         {
             id: 3,
             name: "Ali Raza",
             image: "assets/slider-1.jpg",
-            location: "Islamabad, Pakistan",
+            location: "Islamabad Kashmir",
             review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
         },
         {
             id: 4,
             name: "Fatima Zahra",
             image: "assets/slider-1.jpg",
-            location: "Murree, Pakistan",
+            location: "United Kingdom",
             review: "A scenic paradise! Murree’s lush greenery and cool climate make it a must-visit for nature lovers."
         },
         {

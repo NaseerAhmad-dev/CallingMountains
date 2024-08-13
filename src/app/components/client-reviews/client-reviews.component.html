@@ -1,31 +1,29 @@
-<p class="text-secondary">
-    What clients say about us
-</p>
-<div class="container my-5">
-    <div class="d-flex gap-4">
-        <div>
-            <span height="50" width="50" style="border:2px solid green" (click)="previousReview()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416L0 96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4L224 214.3l0 41.7 0 41.7L52.5 440.6zM256 352l0-96 0-128 0-32c0-12.4 7.2-23.7 18.4-29s24.5-3.6 34.1 4.4l192 160c7.3 6.1 11.5 15.1 11.5 24.6s-4.2 18.5-11.5 24.6l-192 160c-9.5 7.9-22.8 9.7-34.1 4.4s-18.4-16.6-18.4-29l0-64z"/></svg></span>
-            <!-- <button  class="btn btn-primary  left-button">Previous</button> -->
-        </div>
-        <div><button (click)="nextReview()" class="btn btn-primary right-button">Next</button>
-        </div>
+<section class="d-flex rounded w-85 bg-white client-review-wrapper justify-content-center align-items-center flex-column">
+    <div>
+        <p class="text-secondary fw-bolder font-100">
+            Read trusted reviews from our customers
+        </p>
     </div>
-    <div class="d-flex flex-column align-items-center text-primary">
-        <div class="review-container w-100 w-md-50 position-relative d-flex justify-content-center">
-            <div class="review-card" *ngFor="let review of reviews; let i = index"
-                [class.active]="i === currentReviewIndex" [class.previous]="i === currentReviewIndex - 1"
-                [class.next]="i === currentReviewIndex + 1">
-                <div class="card-body">
-                    <div class="d-flex align-items-center mb-3 mr-5 gap-3">
-                        <img [src]="review.image" class="rounded-circle " alt="" height="100" width="100">
-                        <div class="d-flex flex-column gap-2">
-                            <h5 class="card-title mb-0">{{ review.name }}</h5>
-                            <h6 class="card-title mb-0">{{review.location}}</h6>
+    <div class="container my-5">
+        <div class="d-flex gap-4">  
+            <div class="d-flex flex-column align-items-center text-primary">
+                <div class="review-container w-100 w-md-50 position-relative d-flex justify-content-center">
+                    <div class="review-card" *ngFor="let review of reviews; let i = index"
+                        [class.active]="i === currentReviewIndex" [class.previous]="i === currentReviewIndex - 1"
+                        [class.next]="i === currentReviewIndex + 1">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3 mr-5 gap-3">
+                                <img [src]="review.image" class="rounded-circle " alt="" height="100" width="100">
+                                <div class="d-flex flex-column gap-2">
+                                    <h5 class="card-title mb-0">{{ review.name }}</h5>
+                                    <h6 class="card-title mb-0">{{review.location}}</h6>
+                                </div>
+                            </div>
+                            <p class="card-text d-flex justify-content-center">{{ review.review }}</p>
                         </div>
                     </div>
-                    <p class="card-text d-flex justify-content-center">{{ review.review }}</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>

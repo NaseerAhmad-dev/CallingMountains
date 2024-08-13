@@ -6,33 +6,28 @@
     z-index: 1000;
     margin: 0 auto;
     height: 80px;
-    // background-color: #FFF;
-    background: linear-gradient(to right, #F5F5F5, #E0E0E0);
-
+    background-color: rgb(229 231 235/1);
     border-bottom: 0.1rem solid rgba(9, 30, 66, 0.13);
     box-shadow: 0 -0.1rem 0.3rem rgba(9, 30, 66, 0.5);
     .nav-items{
-        color: #fff; /* White */
-
-       ul a li{
+      font-size: 16px;
+      font-weight: 500;
+       ul a {
             list-style: none;
-            cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: all 0.3s ease-in-out;
-            text-decoration: none;
+            color: #000000
         }
 
     }
 }
 .hover-class{
-  text-decoration: underline;
-  background: #ADD8E6;
-  // color:whitesmoke;
+  color:  chocolate;
 }
 
 .nav-items ul a li:hover{
        @extend .hover-class
+}
+.nav-link{
+  color: #000000;
 }
 
 .custom-style {
