@@ -7,11 +7,12 @@ import { PackagesComponent } from "../packages/packages.component";
 import { PlacesToVisitComponent } from "../places-to-visit/places-to-visit.component";
 import { ClientReviewsComponent } from "../client-reviews/client-reviews.component";
 import { ChatComponentComponent } from '../chat-component/chat-component.component';
+import { WebFooterComponent } from "../web-footer/web-footer.component";
 
 @Component({
   selector: 'app-home-componet',
   standalone: true,
-  imports: [HeaderComponent,ChatComponentComponent, RouterOutlet, HerosectionComponent, DisplayPackageComponent, PackagesComponent, PlacesToVisitComponent, ClientReviewsComponent],
+  imports: [HeaderComponent, ChatComponentComponent, RouterOutlet, HerosectionComponent, DisplayPackageComponent, PackagesComponent, PlacesToVisitComponent, ClientReviewsComponent, WebFooterComponent],
   templateUrl: './home-componet.component.html',
   styleUrl: './home-componet.component.scss'
 })

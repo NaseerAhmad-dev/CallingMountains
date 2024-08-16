@@ -1,5 +1,5 @@
 .section-footer{
-    background: #fff;
+    background: #101319;
     padding-top: 20px;
     border-top: 1px solid rgba(202, 202, 202, .29);
     letter-spacing: normal;
@@ -8,4 +8,26 @@
 }
     .no-underline{
     text-decoration: none;
+    }
+
+
+    .top-data {
+        align-items: center;
+        ul li{
+            list-style: none;
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 768px) { 
+        .top-data{
+            flex-direction: column;
+            align-items: flex-start;
+
+            .list-footer{
+                flex-direction: column;
+            }
+        } 
+        
+        
     }

@@ -1,4 +1,4 @@
-<section class="d-flex rounded w-85 bg-white client-review-wrapper justify-content-center align-items-center flex-column">
+<section class="d-flex main-wrapper rounded mx-auto w-85 client-review-wrapper justify-content-center align-items-center flex-column">
     <div>
         <p class="text-secondary fw-bolder font-100">
             Read trusted reviews from our customers
@@ -11,6 +11,7 @@
                     <div class="review-card" *ngFor="let review of reviews; let i = index"
                         [class.active]="i === currentReviewIndex" [class.previous]="i === currentReviewIndex - 1"
                         [class.next]="i === currentReviewIndex + 1">
+                        {{review |json}}
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3 mr-5 gap-3">
                                 <img [src]="review.image" class="rounded-circle " alt="" height="100" width="100">
