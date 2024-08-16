@@ -2,23 +2,40 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { HerosectionComponent } from "../herosection/herosection.component";
 import { Router } from '@angular/router';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { DataserviceService } from '../services/dataservice.service';
-
+import { SwipePagesComponentComponent } from "../swipe-pages-component/swipe-pages-component.component";
+export interface Product {
+  id: string
+  code: string;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  category: string;
+  quantity: number
+  inventoryStatus: string;
+  rating: number;
+}
 @Component({
   selector: 'app-packages',
   standalone: true,
-  imports: [CommonModule, CardModule, ButtonModule, CarouselComponent, HerosectionComponent],
+  imports: [CommonModule, CardModule, ButtonModule, CarouselComponent, HerosectionComponent, CarouselModule, ButtonModule, TagModule, SwipePagesComponentComponent],
   templateUrl: './packages.component.html',
   styleUrl: './packages.component.scss',
 })
+
 export class PackagesComponent {
   constructor(private router:Router, private dataService: DataserviceService){}
   active = 0;
   packsToDisplay:any  = []
+
+  products!: Product[];
+  responsiveOptions: any[] | undefined;
   packagesTypes = [
     {
       "id": 1,
@@ -203,8 +220,46 @@ export class PackagesComponent {
   ]
   ngOnInit(){
     this.packsToDisplay = JSON.parse(JSON.stringify(this.packagesTypes))
+    this.setResponsiveOptions();
+    this.setProducts()
   }
 
+  setResponsiveOptions(){
+    this.responsiveOptions = [
+      {
+          breakpoint: '1199px',
+          numVisible: 1,
+          numScroll: 1
+      },
+      {
+          breakpoint: '991px',
+          numVisible: 2,
+          numScroll: 1
+      },
+      {
+          breakpoint: '767px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ];
+  }
+
+  setProducts(){
+   this.products = [
+    {
+      id: '1001',
+      code: 'nvklal433',
+      name: 'Black Watch',
+      description: 'Product Description',
+      image: 'black-watch.jpg',
+      price: 72,
+      category: 'Accessories',
+      quantity: 61,
+      inventoryStatus: 'OUTOFSTOCK',
+      rating: 4
+  },
+   ]
+  }
 
   filterPacks(packId: number) {
     this.active = packId;
@@ -215,9 +270,17 @@ export class PackagesComponent {
     }
   }
 
-  viewPack(pack: object) {
-    this.dataService.setData(pack);
-    this.router.navigate(['view-details']);
-  }
+ 
+  getSeverity(status: string) {
+    switch (status) {
+        case 'INSTOCK':
+            return 'success';
+        case 'LOWSTOCK':
+            return 'warning';
+        case 'OUTOFSTOCK':
+            return 'danger';
+    }
+    return
+}
 
 }

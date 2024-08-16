@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FieldsetModule } from 'primeng/fieldset';
+import { AvatarModule } from 'primeng/avatar';
 
 interface Review {
   id: number;
@@ -12,7 +14,7 @@ interface Review {
 @Component({
   selector: 'app-client-reviews',
   standalone: true,
-  imports: [CommonModule],
+  imports: [FieldsetModule, AvatarModule, CommonModule],
   templateUrl: './client-reviews.component.html',
   styleUrl: './client-reviews.component.scss'
 })
