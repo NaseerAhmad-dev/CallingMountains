@@ -12,7 +12,7 @@ export interface Package {
     id: number
     name: string;
     description: string;
-    price: number;
+    price: string;
     image: string;
     packBadge: string,
     days: number,
@@ -74,7 +74,8 @@ export class SwipePagesComponentComponent  implements OnInit {
         return 'secondary'
     }
     packageClicked(pack:any){
-        this.dataService.setData(pack);
+        this.dataService.packSelected.next(pack);
+        console.log(JSON.stringify(pack));
         this.router.navigate(['view-details']);
     }
 
