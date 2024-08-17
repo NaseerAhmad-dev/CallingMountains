@@ -2,18 +2,33 @@ import { Component } from '@angular/core';
 import { DataserviceService } from '../services/dataservice.service';
 import { CommonModule } from '@angular/common';
 import { GalleriaModule } from 'primeng/galleria';
+import { FieldsetModule } from 'primeng/fieldset';
+import { DividerModule } from 'primeng/divider';
+import { TagModule } from 'primeng/tag';
+
 @Component({
     selector: 'app-display-package',
     standalone: true,
-    imports: [CommonModule, GalleriaModule],
+    imports: [CommonModule, GalleriaModule,FieldsetModule, DividerModule, TagModule],
     templateUrl: './display-package.component.html',
     styleUrl: './display-package.component.scss'
 })
 export class DisplayPackageComponent {
     pack: any;
+    loading:boolean = true;
     constructor(private dataService: DataserviceService) { }
     images: any[] | undefined;
-
+    destinations:any = [
+        {
+            name:'Srinagar'
+        },
+        {
+            name:'Gulmarg'
+        },
+        {
+            name:'Pahalgam'
+        }
+    ]
     responsiveOptions: any[] = [
         {
             breakpoint: '1024px',
@@ -41,6 +56,7 @@ export class DisplayPackageComponent {
             if (res)
             {
                 this.pack = res;
+                this.loading = false;
                 console.log("Response Fetched ....!" + JSON.stringify(res))
             }
         });

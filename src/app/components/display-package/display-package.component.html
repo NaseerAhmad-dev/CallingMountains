@@ -1,69 +1,80 @@
-<!-- <section class="row mx-auto p-3">
-  <div class="image-container">
-    <img src="../../../assets/slider-1.jpg" alt="back" class="image" height="400" width="100%">
-    <div class="overlay">
-      <div class="text">
-        {{ pack?.title |titlecase }}
-      </div>
+@if(!loading){
+<div class="row mx-auto package-container">
+  <div class="flex top-row-contianer flex-wrap p-3">
+    <div class="card col-md-6 border-0 left-top-galleria">
+      <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }"
+        [numVisible]="5">
+        <ng-template pTemplate="item" let-item>
+          <img [src]="item.itemImageSrc" style="width: 100%;" />
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+          <div class="grid grid-nogutter justify-content-center">
+            <img [src]="item.thumbnailImageSrc" />
+          </div>
+        </ng-template>
+      </p-galleria>
     </div>
-  </div>
-  <div class="text-secondary d-flex flex-column justify-content-center col-md-10 mx-auto mt-3">
-    <h3>{{pack?.description}}</h3>
-    <div class="d-flex justify-content-between mb-3">
-      <div class="d-flex flex-column">
-        <p class="m-0 fw-bolder m">Budget</p>
-        <p class="m-0">{{pack?.discount}}</p>
+    <div class="col-md-6 border-0 right-top-highlights" id="description">
+      <div class="title-wrapper mt-md-0 mt-sm-2">
+        <span class="mt-0  pack-title d-flex justify-content-center align-items-center  font-semibold text-xl"
+          [ngStyle]="{backgroundColor:'var(--highlight-bg)', color: 'var(--highlight-text-color)', borderRadius: 'var(--border-radius)', padding: '3rem'}">
+          Solo Trip to Kashmir - Highlights</span>
       </div>
-      <div class="d-flex flex-column mb-3">
-        <p class="m-0 fw-bolder">Duration</p>
-        <div>
-          <p class="m-0">{{pack?.nights}} - N {{pack?.days}} - D</p>
-        </div>
-
+      <p-divider type="solid" />
+      <div class="pack-description mt-4 secondary fw-large" >
+        Escape the ordinary and embark on a solo adventure through the enchanting landscapes of Kashmir. Trek through lush meadows, marvel at towering peaks, and experience the serenity of pristine lakes. Immerse yourself in the region's rich culture, savor delicious local cuisine, and connect with friendly locals. Discover hidden gems, capture stunning photographs, and create lasting memories on this unforgettable journey of self-discovery..
       </div>
-    </div>
-    <h4>Experience the Magic of Love in Kashmir Valley: Walk through the Chinar tree-lined roads, sail on the sparkling
-      Dal Lake surrounded by houseboats, explore Mughal gardens and the city's old quarter for shopping distinctive
-      handicrafts, Pashmina shawls, and beautiful Kashmiri outfits with your partner.</h4>
-  </div>
-  <div class="accordion accordion-flush  w-md-100 mx-auto col-md-6" style="margin-bottom: 40px;"
-    id="accordionFlushExample">
-    <div class="accordion-item" *ngFor="let packItem of pack?.activities; let i = index">
-      <h2 class="accordion-header" id="flush-heading{{i}}">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false"
-          [attr.aria-controls]="'flush-collapse' + i">
-          {{ 'Day - ' + (packItem.day + (i + 1)) | uppercase }}
-        </button>
-      </h2>
-      <div id="flush-collapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'flush-heading' + i"
-        data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">
-          <ul>
-            <li>
-              {{ packItem.activity | titlecase }}
-            </li>
-          </ul>
+      <p-divider type="solid" />
+      <div class="Destionation mt-4 d-flex flex-column">
+       <div class=" mb-3 ">
+        <p-tag 
+        [value]="'Destionations Covered'" 
+        [severity]="'warning'" 
+        class="mr-2 mb-2 mt-0 font-semibold text-xl warning"
+        />
+       </div> 
+       <div class="d-flex gap-2">
+        @for(destination of destinations; track destination){
+          <p-tag 
+          [value]="destination.name" 
+          [severity]="'success'" 
+          class="mr-2"
+          />          
+        }
         </div>
       </div>
+      <p-divider type="solid" />
+      <div class="d-flex flex-row gap-4 align-items-center mt-4">
+        <div class="d-flex justify-content-center align-items-center gap-1 flex-column">
+          <i class="pi pi-calendar" style="font-size: 2rem"></i>
+          <div class="mt-0 info font-semibold text-xl">
+            <span>D - </span>
+            <span>N</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <i class="pi pi-users" style="font-size: 2rem ; color: 'var(--highlight-text-color)'"></i>
+          <div class="mt-0 font-semibold text-xl" [ngStyle]="{color: 'var(--surface-ground-pink-400)'}">
+            <span class="m-0">1</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section> -->
-
-
-<div class="card mx-auto">
-  <p-galleria 
-      [value]="images" 
-      [responsiveOptions]="responsiveOptions" 
-      [containerStyle]="{ 'max-width': '640px' }" 
-      [numVisible]="5"> 
-          <ng-template pTemplate="item" let-item>
-              <img [src]="item.itemImageSrc" style="width: 100%;" />
-          </ng-template>
-          <ng-template pTemplate="thumbnail" let-item>
-              <div class="grid grid-nogutter justify-content-center">
-                  <img [src]="item.thumbnailImageSrc" />
-              </div>
-          </ng-template>
-          </p-galleria>
+  <div class="mt-4 mx-auto col-md-6">
+    <div class="card flex justify-content-center">
+      <p-fieldset legend="Header" [toggleable]="true">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+      </p-fieldset>
+    </div>
+  </div>
 </div>
+}
