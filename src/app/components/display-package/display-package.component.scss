@@ -1,15 +1,17 @@
-
 .package-container {
     margin-top: 80px;
-    border:3px solid green;
 }
+
 .pack-title {
     height: 10px;
 }
-#description{
+
+#description {
     background-color: white;
 }
-.tour-iternary{
+
+.stepper-container {
+    padding: 18px;
 }
 
 @media (max-width: 768px) {
@@ -17,4 +19,8 @@
         background-color: none;
         padding: 4px;
     }
-  }
+    .stepper-container {
+        padding: 3px;
+    }
+    
+}
