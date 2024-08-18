@@ -8,11 +8,12 @@ import { PlacesToVisitComponent } from "../places-to-visit/places-to-visit.compo
 import { ClientReviewsComponent } from "../client-reviews/client-reviews.component";
 import { ChatComponentComponent } from '../chat-component/chat-component.component';
 import { WebFooterComponent } from "../web-footer/web-footer.component";
+import { ContactUsComponent } from '../contact-us/contact-us.component';
 
 @Component({
   selector: 'app-home-componet',
   standalone: true,
-  imports: [HeaderComponent, ChatComponentComponent, RouterOutlet, HerosectionComponent, DisplayPackageComponent, PackagesComponent, PlacesToVisitComponent, ClientReviewsComponent, WebFooterComponent],
+  imports: [HeaderComponent,ContactUsComponent, ChatComponentComponent, RouterOutlet, HerosectionComponent, DisplayPackageComponent, PackagesComponent, PlacesToVisitComponent, ClientReviewsComponent, WebFooterComponent],
   templateUrl: './home-componet.component.html',
   styleUrl: './home-componet.component.scss'
 })
