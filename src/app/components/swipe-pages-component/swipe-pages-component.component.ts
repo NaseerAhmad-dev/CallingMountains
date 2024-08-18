@@ -8,18 +8,24 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { Router } from '@angular/router';
 
-export interface Package {
-    id: number
+export interface Activity {
+    day: string;
+    dayActivity: string | string[];
+  }
+  
+  
+  export interface Package {
+    id: number;
     name: string;
     description: string;
     price: string;
     image: string;
-    packBadge: string,
-    days: number,
-    nights: number,
+    packBadge: string;
+    days: number;
+    nights: number;
     rating: number;
-    destinations: string[]; 
-    activities: any[];
+    destinations: string[];
+    activities: Activity[];
     inclusions: string[];
   }
 
@@ -27,7 +33,7 @@ export interface Package {
   selector: 'app-swipe-pages-component',
   standalone: true,
   imports: [CarouselModule, ButtonModule, TagModule],
-  providers: [DataserviceService],
+  providers: [],
   templateUrl: './swipe-pages-component.component.html',
   styleUrl: './swipe-pages-component.component.scss'
 })
@@ -74,9 +80,8 @@ export class SwipePagesComponentComponent  implements OnInit {
         return 'secondary'
     }
     packageClicked(pack:any){
-        this.dataService.packSelected.next(pack);
-        console.log(JSON.stringify(pack));
-        this.router.navigate(['view-details']);
+     this.dataService.packSelected.next(pack);
+     this.router.navigate(['view-details']);  
     }
 
 }

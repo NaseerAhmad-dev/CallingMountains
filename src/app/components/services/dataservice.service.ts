@@ -4,8 +4,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataserviceService {
-    // packSelected = new BehaviorSubject({});
-    packSelected = new BehaviorSubject<any>({})
+
+  public packSelected: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+
 
   constructor() { }
 
@@ -40,32 +41,60 @@ export class DataserviceService {
         activities: [
           {
             "day": "Airport to Srinagar",
-            "dayActivity": "Site Seeing",
-            "return": true
+            "dayActivity": [
+              "A representative will meet you at the prearranged location in Srinagar and provide a brief overview of the entire trip.",
+              "After that, a motel in Srinagar will be where you are taken.",
+              "Finish the check-in procedures, take some time to relax, and then go exploring Srinagar.",
+              "Check out the Shalimar Bagh and Nishat Bagh, two of the most well-known Mughal Gardens (abode of love).",
+              "The Zabarwan hills can be seen in the distance as these gardens encircle Dal Lake's eastern side for several kilometres.",
+              "Spend some time by the lake in the evening and look around the neighbourhood."
+            ]
           },
           {
             "day": "Srinagar to sonamarg",
-            "dayActivity": "Exploring Sonamarg",
-            "return": true
-          },
-          {
-            "day": "Srinagar to Gulmarg",
-            "dayActivity": "Exploring Gulmarg",
-            "return": true
+            "dayActivity": [
+              "The hotel's delicious brunch is served each morning with a stunning view of Dal Lake.",
+              "Prepare yourself for the ultimate journey to Sonamarg after breakfast.",
+              "Set out on a full-day trip to the lovely Sonmarg 'meadow of gold.'",
+              "Stop at picturesque locations along the way to Sonamarg to take in the scenery and the surrounding natural beauty.",
+              "When you get to Sonamarg, you can take a horse to the Thajiwas Glacier, where snow is present all year long.",
+              "In Sonamarg, you can also take part in the most well-liked sports activities, like white water kayaking.",
+              "Drive back to your accommodation in Srinagar after finishing your exploration of Sonamarg.",
+              "Enjoy a night's sleep and supper at the Srinagar hotel."
+            ]
           },
           {
             "day": "Srinagar to Pahalgam",
-            "dayActivity": "Exploring Betaab, Aru Chandanwari",
-            "return": true
+            "dayActivity": [
+              "Enjoy a delicious breakfast while taking in the stunning view of the snow-capped mountains before checking out of the hotel.",
+              "You will then continue on to Pahalgam, also known as the shepherds' region.",
+              "Once you arrive in Pahalgam, settle into your hotel and take some time to unwind before travelling to the lovely Aru Valley.",
+              "A small hamlet called Aru Valley is renowned for its scenic beauty and offers a variety of adventurous activities.",
+              "The Betaab Valley, one of the most well-known tourist locations that offers breathtaking views of the Lidder River while being surrounded by heavenly natural charm, should then be reached.",
+              "Additionally, Chandanwari, which is known for its snow bridge and serves as the beginning point of the revered Amarnath Yatra, will be on your itinerary.",
+              "Return to the hotel in Pahalgam and call it a day after a day filled with breathtaking sightseeing and exhilarating experiences."
+            ]
           },
-
+          {
+            "day": "Srinagar to Gulmarg",
+            "dayActivity": [
+              "Start your day early with a hearty breakfast, then set off on a scenic drive from Srinagar to Gulmarg.",
+              "Upon reaching Gulmarg, your main activity will be the Gondola Ride, offering stunning panoramic views of the snow-covered mountains.",
+              "As the cable car rises, enjoy the sweeping vistas of the valley below, revealing the hidden beauty of nature.",
+              "Before heading back to Srinagar, take advantage of Gulmarg’s famous ski slopes and try your hand at adventure sports like skiing and paragliding.",
+              "On the return journey, savor the natural beauty and snow-capped mountains that have accompanied you throughout the day.",
+              "Enjoy dinner and an overnight stay at a hotel in Srinagar."
+            ]
+          },
           {
             "day": "Srinagar to Airport",
-            "dayActivity": "Leaving with beautiful Memories",
-            "return": true
+            "dayActivity": [
+              "Begin your day with a satisfying breakfast, taking in the breathtaking view of the snow-capped mountains before checking out of the houseboat.",
+              "The tour concludes as you are dropped off at a preferred location in Srinagar."
+            ]
           },
         ],
-        inclusions: ["4 Night accomdation", "Daily breakfast and dinner", "pick and drop", "1 shikara ride"]
+        inclusions: ["4 Night accomdation", "Daily breakfast and dinner", "pick and drop", "all taxes", "1 shikara ride"]
       },
 
       {
@@ -137,7 +166,7 @@ export class DataserviceService {
           },
           {
             "day": "Pahalgam to Srinagar",
-            "dayActivity": " Back to Srinagar",
+            "dayActivity": " Exploring Betaab, Aru Chandanwari",
             "return": true
           },
 
@@ -315,23 +344,23 @@ export class DataserviceService {
           },
           {
             "day": "Ladakh Sight Seeing",
-            "dayActivity": "Ladakh is a breathtaking destination known for its stunning landscapes, vibrant culture, and unique experiences. From the crystal-clear waters of Pangong Lake to the majestic monasteries like Thiksey and Hemis, every corner of Ladakh offers a glimpse into its rich heritage.",
-            "return": false
+            "dayActivity": "Ladakh is a breathtaking destination known for its stunning landscapes, vibrant culture, and unique experiences. From the crystal-clear waters of Pangong Lake to the majestic monasteries like Thiksey and Hemis, every corner of Ladakh offers a glimpse into its rich heritage."
+            , "return": false
           },
           {
             "day": "Ladakh to  Nubra",
-            "dayActivity": "Leaving for Nubra Valley, driving across Khardong-la (alt: 18,380 ft). After descending from the pass, drive on for sightseeing of the Sumoor area. Later check into a fixed camp in the same area or drive across to Deskit for an overnight stay in a camp",
-            "return": false
+            "dayActivity": "Leaving for Nubra Valley, driving across Khardong-la (alt: 18,380 ft). After descending from the pass, drive on for sightseeing of the Sumoor area. Later check into a fixed camp in the same area or drive across to Deskit for an overnight stay in a camp."
+            , "return": false
           },
           {
             "day": "Exploring Nubra",
-            "dayActivity": "Today after an early breakfast you would be driven to Nubra Valley. Enroute visit Khardung-la-pass, the highest motorable road in the world at 18,380ft. Nubra Valley is popularly known as Ldorma or the valley of flowers. It is situated to the north of Ladakh between the Karakoram and Ladakh ranges of the Himalayas. Arrive at Hunder & check in at Hotel/Camps. Later visit Diskit Village & enjoy the Camel ride on sand dunes. Dinner and overnight stay at Hotel/Camp.",
-            "return": false
+            "dayActivity": "Today after an early breakfast you would be driven to Nubra Valley. Enroute visit Khardung-la-pass, the highest motorable road in the world at 18,380ft. Nubra Valley is popularly known as Ldorma or the valley of flowers. It is situated to the north of Ladakh between the Karakoram and Ladakh ranges of the Himalayas. Arrive at Hunder & check in at Hotel/Camps. Later visit Diskit Village & enjoy the Camel ride on sand dunes. Dinner and overnight stay at Hotel/Camp."
+            , "return": false
           },
           {
             "day": "Nubra to Pangong",
-            "dayActivity": "Today after breakfast, check out from the Hotel & drive to Pangong Lake, east to the Leh after crossing Changla Pass (17500ft) and driving via Durbuk and Tangtse villages in the Changthang region of Ladakh and perhaps one of the most amazing lakes in Asia which changes its color 4 – 5 times a day. Later drive back to Leh for night stay",
-            "return": false
+            "dayActivity": "Today after breakfast, check out from the Hotel & drive to Pangong Lake, east to the Leh after crossing Changla Pass (17500ft) and driving via Durbuk and Tangtse villages in the Changthang region of Ladakh and perhaps one of the most amazing lakes in Asia which changes its color 4 – 5 times a day. Later drive back to Leh for night stay"
+            , "return": false
           },
 
           {
@@ -341,7 +370,7 @@ export class DataserviceService {
 
           {
             "day": "Pangong to Leh",
-            "dayActivity": "Experience the beauty of Pangong Lake with our camping package! Enjoy a scenic drive from Leh to the stunning blue waters of Pangong, where you'll set up camp in comfortable tents. Spend your days exploring the lake, taking leisurely walks along the shore, and soaking in the breathtaking views."
+            "dayActivity": "Experience the beauty of Pangong Lake with our camping package! Enjoy a scenic drive from Leh to the stunning blue waters of Pangong, where you'll set up camp in comfortable tents. Spend your days exploring the lake, taking leisurely walks along the shore, and soaking in the breathtaking views.",
           },
           {
             "day": "Ladakh to Kargil",

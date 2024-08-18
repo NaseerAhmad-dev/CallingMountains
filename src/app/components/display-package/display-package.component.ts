@@ -7,11 +7,12 @@ import { DividerModule } from 'primeng/divider';
 import { TagModule } from 'primeng/tag';
 import { StepperModule } from 'primeng/stepper';
 import { ButtonModule } from 'primeng/button';
+import { BadgeModule } from 'primeng/badge';
 
 @Component({
     selector: 'app-display-package',
     standalone: true,
-    imports: [CommonModule, GalleriaModule,FieldsetModule, DividerModule, StepperModule, ButtonModule, TagModule],
+    imports: [CommonModule,BadgeModule, GalleriaModule,FieldsetModule, DividerModule, StepperModule, ButtonModule, TagModule],
     templateUrl: './display-package.component.html',
     styleUrl: './display-package.component.scss'
 })
@@ -53,6 +54,7 @@ export class DisplayPackageComponent {
         this.assignImagesToPack();
 
     }
+   
     fetchPackDetails() {
         this.dataService.packSelected.subscribe(res => {
             if (res)
@@ -63,6 +65,19 @@ export class DisplayPackageComponent {
             }
         });
     }
+
+    getSeverity(status: string) {
+        switch (status) {
+            case 'BESTSELLING':
+                return 'success';
+            case 'TRENDING':
+                return 'warning';
+            case 'POPULAR':
+                return 'info';
+        }
+        return 'secondary'
+    }
+    
     assignImagesToPack() {
 
         this.images = [
