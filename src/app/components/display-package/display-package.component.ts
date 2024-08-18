@@ -8,11 +8,12 @@ import { TagModule } from 'primeng/tag';
 import { StepperModule } from 'primeng/stepper';
 import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
+import { WebFooterComponent } from "../web-footer/web-footer.component";
 
 @Component({
     selector: 'app-display-package',
     standalone: true,
-    imports: [CommonModule,BadgeModule, GalleriaModule,FieldsetModule, DividerModule, StepperModule, ButtonModule, TagModule],
+    imports: [CommonModule, BadgeModule, GalleriaModule, FieldsetModule, DividerModule, StepperModule, ButtonModule, TagModule, WebFooterComponent],
     templateUrl: './display-package.component.html',
     styleUrl: './display-package.component.scss'
 })
