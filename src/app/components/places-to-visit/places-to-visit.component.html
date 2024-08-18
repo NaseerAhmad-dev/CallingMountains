@@ -1,15 +1,4 @@
-<!-- <section id="destination" class="packages-wrapper rounded d-flex flex-wrap mx-auto p-md-4  row mt-4">
-    <p class="m-0 heading text-primary d-flex justify-content-center  "> Places to visit in kashmir</p>
-    <div class="my-2 mx-auto single-pack col-md-4" *ngFor=" let places of places" (click)="placeClicked(places)">
-        <div class="">
-            <img [src]="places.ImgUrl" class="card-img-top" alt="..." style="height: 300px;">
-        </div>
-        <div class="py-2 bg-green">
-            <h5 class="text-primary">{{places.name}}</h5>
-        </div>
-    </div>
-</section> -->
-
+<!-- 
 @for(place of places; track place){
 <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout"
     class="flex custom-scroll-class col-md-4 box flex-column border-0 shadow-1 mb-2 justify-content-center align-items-center animation-duration-1000">
@@ -18,4 +7,28 @@
         <h5 class="text-primary">{{place.name}}</h5>
     </div>
 </div>
-}
+} -->
+
+<!-- <div class="row">
+    <div *ngFor="let place of places"
+         pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout"
+         class="col-12 col-md-4 box flex-column border-0 gap-4 shadow-1 mb-2 justify-content-center align-items-center animation-duration-1000">
+      <img [src]="place.ImgUrl" class="card-img-top" alt="{{ place.name }}" style="height: 300px; width: 300px;">
+      <div class="py-2 bg-green">
+        <h5 class="text-primary">{{ place.name }}</h5>
+      </div>
+    </div>
+</div> -->
+
+<div class="row mx-auto">
+    <div *ngFor="let place of places"
+         pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout"
+         class="col-12 col-md-4 mx-auto d-flex flex-column align-items-center justify-content-center box border-0 shadow-0 mb-2 animation-duration-1000 text-center">
+      <img [src]="place.ImgUrl" class="card-img-top" alt="{{ place.name }}" style="height: 300px; width: 300px; object-fit: cover;">
+      <div class="py-2 bg-green w-100">
+        <h5 class="text-primary">{{ place.name }}</h5>
+      </div>
+    </div>
+  </div>
+  
+  
