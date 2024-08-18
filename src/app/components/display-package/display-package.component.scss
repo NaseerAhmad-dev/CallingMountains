@@ -15,6 +15,9 @@
 }
 
 @media (max-width: 768px) {
+    .package-container {
+        margin-top: 0px;
+    }
     #description {
         background-color: none;
         padding: 4px;

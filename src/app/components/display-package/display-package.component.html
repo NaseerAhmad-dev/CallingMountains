@@ -67,9 +67,8 @@
     <p-stepper orientation="vertical" class="bg-white stepper-container">
       <p-stepperPanel header="Day -1 ">
         <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
-          <div class="flex flex-column h-12rem">
-            <div
-              class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+          <div class="flex flex-column">
+            <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
               <ul class="m-0 p-0">
                 <li>A representative will meet you at the prearranged location in Srinagar and provide a brief overview
                   of the entire trip.
@@ -90,12 +89,8 @@
               </ul>
             </div>
           </div>
-          <!-- <div class="flex py-4">
-            <p-button label="Next Day " (onClick)="nextCallback.emit()" />
-          </div> -->
         </ng-template>
       </p-stepperPanel>
-
 
       <p-stepperPanel header="Day - 2">
         <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
@@ -122,12 +117,14 @@
               </ul>
             </div>
           </div>
-          <!-- <div class="flex py-4">
-            <p-button label="Next Day " (onClick)="nextCallback.emit()" />
-          </div> -->
         </ng-template>
       </p-stepperPanel>
     </p-stepper>
+  </div>
+  <div class="trip-inclusions mt-4 mx-auto col-md-6">
+    <h2 class="warning d-flex justify-content-center fw-bold mb-3"
+    [ngStyle]="{backgroundColor:'var(--bs-info-bg-subtle)', color: 'var(--bs-info)', borderRadius: 'var(--border-radius)', padding: '1rem'}">
+    Tour Inclusions</h2>
   </div>
 </div>
 }
