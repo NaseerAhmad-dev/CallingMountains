@@ -9,11 +9,12 @@ import { PlacesToVisitComponent } from './components/places-to-visit/places-to-v
 import { WebFooterComponent } from "./components/web-footer/web-footer.component";
 import { HerosectionComponent } from './components/herosection/herosection.component';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { ChatComponentComponent } from "./components/chat-component/chat-component.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent,RouterOutlet, ScrollTopModule, ClientReviewsComponent, BannerComponent, PackagesComponent, CarouselComponent, PlacesToVisitComponent,HerosectionComponent,  WebFooterComponent],
+  imports: [HeaderComponent, RouterOutlet, ScrollTopModule, ClientReviewsComponent, BannerComponent, PackagesComponent, CarouselComponent, PlacesToVisitComponent, HerosectionComponent, WebFooterComponent, ChatComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
