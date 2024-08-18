@@ -14,33 +14,29 @@
         </ng-template>
       </p-galleria>
     </div>
-    <div class="col-md-6 border-0 right-top-highlights" id="description">
+    <div class="col-md-6 border-0 p-1 right-top-highlights rounded" id="description">
       <div class="title-wrapper mt-md-0 mt-sm-2">
         <span class="mt-0  pack-title d-flex justify-content-center align-items-center  font-semibold text-xl"
           [ngStyle]="{backgroundColor:'var(--highlight-bg)', color: 'var(--highlight-text-color)', borderRadius: 'var(--border-radius)', padding: '3rem'}">
           Solo Trip to Kashmir - Highlights</span>
       </div>
       <p-divider type="solid" />
-      <div class="pack-description mt-4 secondary fw-large" >
-        Escape the ordinary and embark on a solo adventure through the enchanting landscapes of Kashmir. Trek through lush meadows, marvel at towering peaks, and experience the serenity of pristine lakes. Immerse yourself in the region's rich culture, savor delicious local cuisine, and connect with friendly locals. Discover hidden gems, capture stunning photographs, and create lasting memories on this unforgettable journey of self-discovery..
+      <div class="pack-description mt-4 secondary fw-large">
+        Escape the ordinary and embark on a solo adventure through the enchanting landscapes of Kashmir. Trek through
+        lush meadows, marvel at towering peaks, and experience the serenity of pristine lakes. Immerse yourself in the
+        region's rich culture, savor delicious local cuisine, and connect with friendly locals. Discover hidden gems,
+        capture stunning photographs, and create lasting memories on this unforgettable journey of self-discovery..
       </div>
       <p-divider type="solid" />
       <div class="Destionation mt-4 d-flex flex-column">
-       <div class=" mb-3 ">
-        <p-tag 
-        [value]="'Destionations Covered'" 
-        [severity]="'warning'" 
-        class="mr-2 mb-2 mt-0 font-semibold text-xl warning"
-        />
-       </div> 
-       <div class="d-flex gap-2">
-        @for(destination of destinations; track destination){
-          <p-tag 
-          [value]="destination.name" 
-          [severity]="'success'" 
-          class="mr-2"
-          />          
-        }
+        <div class=" mb-3 ">
+          <p-tag [value]="'Destionations Covered'" [severity]="'warning'"
+            class="mr-2 mb-2 mt-0 font-semibold text-xl warning" />
+        </div>
+        <div class="d-flex gap-2">
+          @for(destination of destinations; track destination){
+          <p-tag [value]="destination.name" [severity]="'success'" class="mr-2" />
+          }
         </div>
       </div>
       <p-divider type="solid" />
@@ -59,22 +55,79 @@
           </div>
         </div>
       </div>
+      <p-divider type="solid" />
     </div>
   </div>
-  <div class="mt-4 mx-auto col-md-6">
-    <div class="card flex justify-content-center">
-      <p-fieldset legend="Header" [toggleable]="true">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </p>
-      </p-fieldset>
-    </div>
+
+  <div class="mt-4 mx-auto col-md-6 secondary">
+    <h2 class="warning d-flex justify-content-center fw-bold mb-3"
+      [ngStyle]="{backgroundColor:'var(--bs-info-bg-subtle)', color: 'var(--bs-info)', borderRadius: 'var(--border-radius)', padding: '1rem'}">
+      Tour Itinerary</h2>
+
+    <p-stepper orientation="vertical" class="bg-white p-3">
+      <p-stepperPanel header="Day -1 ">
+        <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+          <div class="flex flex-column h-12rem">
+            <div
+              class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+              <ul class="m-0 p-0">
+                <li>A representative will meet you at the prearranged location in Srinagar and provide a brief overview
+                  of the entire trip.
+                </li>
+                <li>After that, a motel in Srinagar will be where you are taken.</li>
+                <li>Finish the check-in procedures, take some time to relax, and then go exploring Srinagar.
+                </li>
+                <li>Check out the Shalimar Bagh and Nishat Bagh, two of the most well-known Mughal Gardens (abode of
+                  love).
+                </li>
+                <li>The Zabarwan hills can be seen in the distance as these gardens encircle Dal Lake's eastern side for
+                  several kilometres.
+                </li>
+                <li>The Zabarwan hills can be seen in the distance as these gardens encircle Dal Lake's eastern side for
+                  several kilometres.
+                </li>
+                <li>Spend some time by the lake in the evening and look around the neighbourhood.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="flex py-4">
+            <p-button label="Next Day " (onClick)="nextCallback.emit()" />
+          </div> -->
+        </ng-template>
+      </p-stepperPanel>
+
+
+      <p-stepperPanel header="Day - 2">
+        <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+          <div class="flex flex-column h-12rem">
+            <div
+              class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
+              <ul class="m-0 p-0">
+                <li>A representative will meet you at the prearranged location in Srinagar and provide a brief overview
+                  of the entire trip.
+                </li>
+                <li>After that, a motel in Srinagar will be where you are taken.</li>
+                <li>Finish the check-in procedures, take some time to relax, and then go exploring Srinagar.
+                </li>
+                <li>Check out the Shalimar Bagh and Nishat Bagh, two of the most well-known Mughal Gardens (abode of
+                  love).
+                </li>
+                <li>The Zabarwan hills can be seen in the distance as these gardens encircle Dal Lake's eastern side for
+                  several kilometres.
+                </li>
+                <li>The Zabarwan hills can be seen in the distance as these gardens encircle Dal Lake's eastern side for
+                  several kilometres.
+                </li>
+                <li>Spend some time by the lake in the evening and look around the neighbourhood.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="flex py-4">
+            <p-button label="Next Day " (onClick)="nextCallback.emit()" />
+          </div> -->
+        </ng-template>
+      </p-stepperPanel>
+    </p-stepper>
   </div>
 </div>
 }

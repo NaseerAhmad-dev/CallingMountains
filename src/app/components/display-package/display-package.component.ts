@@ -5,11 +5,13 @@ import { GalleriaModule } from 'primeng/galleria';
 import { FieldsetModule } from 'primeng/fieldset';
 import { DividerModule } from 'primeng/divider';
 import { TagModule } from 'primeng/tag';
+import { StepperModule } from 'primeng/stepper';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
     selector: 'app-display-package',
     standalone: true,
-    imports: [CommonModule, GalleriaModule,FieldsetModule, DividerModule, TagModule],
+    imports: [CommonModule, GalleriaModule,FieldsetModule, DividerModule, StepperModule, ButtonModule, TagModule],
     templateUrl: './display-package.component.html',
     styleUrl: './display-package.component.scss'
 })
