@@ -26,7 +26,7 @@ export interface Activity {
     rating: number;
     destinations: string[];
     activities: Activity[];
-    inclusions: string[];
+    inclusions: string[] | string[];
   }
 
 @Component({

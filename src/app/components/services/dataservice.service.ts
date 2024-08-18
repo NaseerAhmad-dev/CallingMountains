@@ -94,7 +94,14 @@ export class DataserviceService {
             ]
           },
         ],
-        inclusions: ["4 Night accomdation", "Daily breakfast and dinner", "pick and drop", "all taxes", "1 shikara ride"]
+        "inclusions" : [
+          "A cosy and hygienic car (Innova/Xylo, or a comparable model) for sightseeing on each of the days specified in the schedule.",
+          "According to the timing of your journey, airport pickup and drop-off.",
+          "Stay in clean, well-maintained lodgings with double and triple occupancy.",
+          "Food included, per the schedule.",
+          "Professional chauffeur cum guide.",
+          "Sightseeing as per the schedule."
+        ]
       },
 
       {
@@ -181,8 +188,16 @@ export class DataserviceService {
             "return": true
           },
         ],
-        inclusions: ["5 Night accomdation", "aily breakfast and dinner", "pick and drop", "1 shikara ride"]
-      },
+
+        "inclusions" : [
+          "A cosy and hygienic car (Innova/Xylo, or a comparable model) for sightseeing on each of the days specified in the schedule.",
+          "According to the timing of your journey, airport pickup and drop-off.",
+          "Stay in clean, well-maintained lodgings with double and triple occupancy.",
+          "Food included, per the schedule.",
+          "Professional chauffeur cum guide.",
+          "Sightseeing as per the schedule."
+        ]
+            },
       {
         id: 4,
         name: "Kashmir Together",
@@ -220,7 +235,14 @@ export class DataserviceService {
             "dayActivity": "Leaving with beautiful Memories"
           },
         ],
-        inclusions: ["4 Night accomdation", "aily breakfast and dinner", "pick and drop", "1 shikara ride"]
+        "inclusions" : [
+          "A cosy and hygienic car (Innova/Xylo, or a comparable model) for sightseeing on each of the days specified in the schedule.",
+          "According to the timing of your journey, airport pickup and drop-off.",
+          "Stay in clean, well-maintained lodgings with double and triple occupancy.",
+          "Food included, per the schedule.",
+          "Professional chauffeur cum guide.",
+          "Sightseeing as per the schedule."
+        ]
       },
 
       {
@@ -270,7 +292,14 @@ export class DataserviceService {
             "dayActivity": "Leaving with beautiful Memories"
           },
         ],
-        inclusions: ["6 Night accomdation", "Daily breakfast and Dinner", "pick and drop", "1 shikara ride"]
+        "inclusions" : [
+          "A cosy and hygienic car (Innova/Xylo, or a comparable model) for sightseeing on each of the days specified in the schedule.",
+          "According to the timing of your journey, airport pickup and drop-off.",
+          "Stay in clean, well-maintained lodgings with double and triple occupancy.",
+          "Food included, per the schedule.",
+          "Professional chauffeur cum guide.",
+          "Sightseeing as per the schedule."
+        ],
       },
 
       {
@@ -312,7 +341,16 @@ export class DataserviceService {
             "dayActivity": "Leaving with beautiful Memories"
           },
         ],
-        inclusions: ["4 Night accomdation", "Daily breakfast and dinner", "pick and drop", "1 shikara ride"]
+        // inclusions: ["6 Night accomdation", "Daily breakfast and Dinner", "pick and drop", "1 shikara ride"]
+
+        "inclusions" : [
+          "A cosy and hygienic car (Innova/Xylo, or a comparable model) for sightseeing on each of the days specified in the schedule.",
+          "According to the timing of your journey, airport pickup and drop-off.",
+          "Stay in clean, well-maintained lodgings with double and triple occupancy.",
+          "Food included, per the schedule.",
+          "Professional chauffeur cum guide.",
+          "Sightseeing as per the schedule."
+        ]
       },
 
       {
@@ -381,7 +419,15 @@ export class DataserviceService {
             "dayActivity": "Experience the beauty of Pangong Lake with our camping package! Enjoy a scenic drive from Leh to the stunning blue waters of Pangong, where you'll set up camp in comfortable tents. Spend your days exploring the lake, taking leisurely walks along the shore, and soaking in the breathtaking views."
           },
         ],
-        inclusions: ["1 Night At Srinagar", "2 Night At Kargil", "3 Night At Leh", "3 Night At Nubra", "Daily breakfast and dinner", "pick and drop"]
+        "inclusions" : [
+          "A cosy and hygienic car (Innova/Xylo, or a comparable model) for sightseeing on each of the days specified in the schedule.",
+          "According to the timing of your journey, airport pickup and drop-off.",
+          "Stay in clean, well-maintained lodgings with double and triple occupancy.",
+          "Food included, per the schedule.",
+          "Professional chauffeur cum guide.",
+          "Sightseeing as per the schedule."
+        ]
+        // inclusions: ["1 Night At Srinagar", "2 Night At Kargil", "3 Night At Leh", "3 Night At Nubra", "Daily breakfast and dinner", "pick and drop"]
       },
     ]
   }

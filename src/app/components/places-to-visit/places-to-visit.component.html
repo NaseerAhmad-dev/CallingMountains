@@ -1,11 +1,24 @@
-<section id="destination" class="packages-wrapper rounded d-flex flex-wrap mx-auto p-md-4  row mt-4">  
+<!-- <section id="destination" class="packages-wrapper rounded d-flex flex-wrap mx-auto p-md-4  row mt-4">
     <p class="m-0 heading text-primary d-flex justify-content-center  "> Places to visit in kashmir</p>
-    <div class="my-2 mx-auto single-pack col-md-4"  *ngFor=" let places of places"  (click)="placeClicked(places)" >
-            <div class="">
-                    <img [src]="places.ImgUrl" class="card-img-top" alt="..." style="height: 300px;">
-            </div>
-            <div class="py-2 bg-green">
-                <h5 class="text-primary" >{{places.name}}</h5>
-            </div>
+    <div class="my-2 mx-auto single-pack col-md-4" *ngFor=" let places of places" (click)="placeClicked(places)">
+        <div class="">
+            <img [src]="places.ImgUrl" class="card-img-top" alt="..." style="height: 300px;">
+        </div>
+        <div class="py-2 bg-green">
+            <h5 class="text-primary">{{places.name}}</h5>
+        </div>
     </div>
-</section>
+</section> -->
+
+@for(place of places; track place){
+<div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout"
+    class="flex box shadow-4 justify-content-center align-items-center h-10rem w-10rem sm:h-15rem sm:w-15rem border-round animation-duration-1000">
+   zoomin
+    <!-- <div class="">
+        <img [src]="place.ImgUrl" class="card-img-top" alt="..." style="height: 300px;">
+    </div>
+    <div class="py-2 bg-green">
+        <h5 class="text-primary">{{place.name}}</h5>
+    </div> -->
+</div>
+}

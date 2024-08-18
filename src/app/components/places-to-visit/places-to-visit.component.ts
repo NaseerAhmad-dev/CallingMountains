@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 @Component({
   selector: 'app-places-to-visit',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,AnimateOnScrollModule],
   templateUrl: './places-to-visit.component.html',
   styleUrl: './places-to-visit.component.scss'
 })
