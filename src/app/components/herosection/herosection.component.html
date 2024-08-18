@@ -28,12 +28,13 @@
   </button>
 </div> -->
 <div class="hero">
-  <video autoplay muted loop class="background-video">
-      <source src="../../../assets/hero-section-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+  <video autoplay muted loop class="background-video" controls>
+    <source src="../../../assets/banner-video-magical-mountains.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
   <div class="overlay"></div> <!-- Overlay div -->
   <div class="hero-content">
-      <h1>Mountains are calling</h1>
+      <h1 class="fw-bolder font-500 text-secondary">Enjoy With Us</h1>
+      <p-button label="Explore" [rounded]="true" severity="help" [size]="'large'" />
   </div>
 </div>
