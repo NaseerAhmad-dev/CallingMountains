@@ -1,4 +1,5 @@
-<section class="contact-us-wrapper row mx-auto gap-3 flex-wrap justify-content-center align-items-center g-green" style="height: 400px;border: 2px solid rgb(0, 102, 255);">
+<section class="contact-us-wrapper row mx-auto gap-3 flex-wrap justify-content-center align-items-center g-green"
+    style="height: 400px;border: 2px solid rgb(0, 102, 255);">
     <div class="col-md-5 d-flex flex-column" style="border: 2px solid red;">
         <div class="d-flex">
             <p-tag [value]=" 'Tel:' " [severity]="'success'" class="mr-2" />
@@ -15,9 +16,37 @@
             <p-tag [value]=" '+91 mountainsaremagic@gmail.com ' " [severity]="'success'" class="mr-2" />
 
         </div>
-        
+
     </div>
-    <div class="col-md-5 d-flex align-items-center justify-content-center" style="border: 2px solid rgb(0, 102, 255);">
-            Form will be Displayed here  
+    <div class="col-md-5 d-flex align-items-center ">
+        <form [formGroup]="contactFrom">
+            @for (control of formData; track $index) {
+            @switch (control.control_type) {
+            @case ('text') {
+            <input type="text" [formControlName]="control.control_name">
+            }
+            @case ('number') {
+            <input type="number" [formControlName]="control.control_name">
+            }
+            @case ('textarea') {
+            <input type="textarea" [formControlName]="control.control_name">
+            }
+            @case ('email') {
+            <input type="textarea" [formControlName]="control.control_name">
+            }
+            }
+            }
+           
+        </form>
+        <button type="submit" (click)="logFormValues()">submit</button>
+
     </div>
 </section>
+<!-- <p-toast 
+    [showTransformOptions]="'translateY(100%)'" 
+    [showTransitionOptions]="'1000ms'" 
+    [hideTransitionOptions]="'1000ms'" 
+    [showTransformOptions]="'translateX(100%)'" /> -->
+    <div class="card flex justify-content-center">
+        <p-toast />
+        </div>
