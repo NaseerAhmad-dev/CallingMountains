@@ -52,7 +52,7 @@ export class ContactUsComponent {
     });
     return validators;
   }
-  logFormValues(){
+  onSubmit(){
     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Form Submission sucessfull' })
   }
 }
