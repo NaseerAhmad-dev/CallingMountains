@@ -1,23 +1,61 @@
 
 <section class="main-wrapper rounded mx-auto w-85 client-review-wrapper p-4 my-2">
-  <div class="d-flex mx-auto">
-    <p class="text-secondary fw-bolder font-100">
+  <div class="d-flex mx-auto justify-content-between mb-2">
+    <p class="text-secondary fw-bolder font-500">
       What Clients Say
       Read testimonials from our satisfied clients
     </p>
+
+    <div class="d-flex gap-2">
+      <!-- Left Arrow Button -->
+      <span class="btn-wrapper cursor-pointer d-flex justify-content-center align-items-center rounded-circle">
+        <svg
+          [ngClass]="'arrow arrow--left'"
+          (click)="goToPreviousSlide()"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+          />
+        </svg>
+      </span>
+    
+      <!-- Right Arrow Button -->
+      <span class="btn-wrapper cursor-pointer mr-2 d-flex justify-content-center align-items-center rounded-circle">
+        <svg
+          *ngIf="slider"
+          [ngClass]="'arrow arrow--right'"
+          (click)="goToNextSlide()"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        </svg>
+      </span>
+    </div>
+    
+    
   </div>
-  <div class="keen-slider d-flex  gap-4 overflow-hidden" #sliderRef>
-    <div *ngFor="let review of reviews; let i = index" class="keen-slider__slide d-flex card w-md-25 w-100 p-4" [ngClass]="'number-slide' + (i + 1)">
+  <div class="keen-slider d-flex overflow-hidden" #sliderRef>
+    <div *ngFor="let review of reviews; let i = index" class="keen-slider__slide d-flex card w-md-25 w-100 p-4" [ngClass]="'number-slide' + (i + 1)" style="width: 25%">
       <div class="flex flex-column">
-        <div class="name-profile-img d-flex justify-content-center align-items-center">
-          <img alt="Card" height="40" width="40" [src]="review.image" />
-          <p class="m-0 fw-bolder">{{review.name}}</p>
+        <div class="name-profile-img d-flex gap-3 mb-2 justify-content-start align-items-center">
+          <img alt="Card" height="100" width="100" class="rounded-circle" [src]="review.image" />
+          <div class="d-flex flex-column gap-1">
+            <p class="m-0 fw-bolder">{{review.name}}</p>
+            <p class="m-0 fw-bolder">{{review.location}}</p>
+          </div>
         </div>
         <div class="">
           <p class="review-description m-0 h-100">{{review.review}}</p>
-          <p-rating [(ngModel)]="review.rating" [readonly]="true" [cancel]="false"></p-rating>
+          <p-rating [(ngModel)]="review.rating" fill="chocolate" [readonly]="true" [cancel]="false"></p-rating>
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <span [ngClass]="'flag-icon flag-icon-' + 'us'"></span>
 </section>

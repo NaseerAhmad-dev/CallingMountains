@@ -7,6 +7,8 @@ import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 
+import { TagModule } from 'primeng/tag';
+
 interface Review {
     id: number;
     name: string;
@@ -19,14 +21,15 @@ interface Review {
 @Component({
     selector: 'app-client-reviews',
     standalone: true,
-    imports: [CommonModule,CardModule, ButtonModule,RatingModule, FormsModule],
+    imports: [CommonModule,CardModule, ButtonModule,RatingModule, FormsModule,TagModule],
     templateUrl: './client-reviews.component.html',
     styleUrls: ['./client-reviews.component.scss']
 })
 export class ClientReviewsComponent {
     @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
     slider: KeenSliderInstance | any = null
-
+    currentSlide:number = 0;
+    totalSlides:number = 0;
     
     reviews: Review[] = [];
     currentReviewIndex: number = 0;
@@ -37,24 +40,34 @@ export class ClientReviewsComponent {
 
     ngOnInit(): void {
         this.loadReviews();
-        // this.startAutoPlay();
+        this.totalSlides = this.reviews.length;
     }
 
     ngAfterViewInit(): void {
         if (isPlatformBrowser(this.platformId)) {
             this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+                loop: false, // Set to false to control loop manually
                 slides: {
-                  perView: 1,
-                  spacing: 15,
+                  perView: 1, // Adjust as per your setup
+                  spacing: 2,
                 },
+
                 breakpoints: {
-                  '(min-width: 768px)': {
-                    slides: {
-                      perView: 2, // Adjust this based on how many you want to show on larger screens
-                      spacing: 15,
+                    '(min-width: 768px)': {
+                      slides: {
+                        perView: 1,  // More slides per view on larger screens
+                        spacing:0,
+                      },
+                    },
+                    '(min-width: 1024px)': {
+                      slides: {
+                        perView: 3,  // More slides per view on even larger screens
+                        spacing: 15,
+                      },
                     },
                   },
-                  // Add more breakpoints if needed
+                slideChanged: (slider) => {
+                  this.currentSlide = slider.track.details.rel;
                 },
               });
         }
@@ -74,7 +87,7 @@ export class ClientReviewsComponent {
                 id: 2,
                 name: "Inayat Khan",
                  image: "assets/banner-1.jpg",
-                location: "Srinagar, Pakistan",
+                location: "UttarPradesh, India",
                 rating:5,
                 review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
             },
@@ -82,7 +95,7 @@ export class ClientReviewsComponent {
                 id: 3,
                 name: "Ali Raza",
                  image: "assets/banner-1.jpg",
-                location: "Islamabad Kashmir",
+                location: "United Kingdom",
                 rating:5,
                 review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
             },
@@ -98,7 +111,7 @@ export class ClientReviewsComponent {
                 id: 5,
                 name: "Hassan Ali",
                  image: "assets/banner-1.jpg",
-                location: "Quetta, Pakistan",
+                location: "Mumbai, Maharastra",
                 rating:4,
                 review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
             }
@@ -106,37 +119,29 @@ export class ClientReviewsComponent {
 
 
     }
+    goToPreviousSlide() {
+        if (this.currentSlide === 0) {
+          // Move to the last slide but add an extra step for smooth transition
+          this.slider.moveToIdx(this.totalSlides, true, () => {
+            // Once animation ends, reset to actual last slide instantly
+            this.slider.moveToIdx(this.totalSlides - 1, false);
+          });
+        } else {
+          this.slider.prev();
+        }
+      }
     
-    // ngAfterViewInit() {
-    //     this.slider = new KeenSlider(this.sliderRef.nativeElement, {
-    //       loop: false,
-    //       mode: "snap",
-    //       rtl: false,
-    //       slides: { perView: "auto" },
-    //     })
-    //   }
-
-    startAutoPlay() {
-        this.intervalId = setInterval(() => {
-            this.nextReview();
-        }, 3000); // Change slide every 3 seconds
-    }
-
-    previousReview() {
-        if (this.currentReviewIndex > 0) {
-            this.currentReviewIndex--;
+      goToNextSlide() {
+        if (this.currentSlide === this.totalSlides - 1) {
+          // Move to the first slide but add an extra step for smooth transition
+          this.slider.moveToIdx(0, true, () => {
+            // Once animation ends, reset to actual first slide instantly
+            this.slider.moveToIdx(0, false);
+          });
         } else {
-            this.currentReviewIndex = this.reviews.length - 1;
+          this.slider.next();
         }
-    }
-
-    nextReview() {
-        if (this.currentReviewIndex < this.reviews.length - 1) {
-            this.currentReviewIndex++;
-        } else {
-            this.currentReviewIndex = 0;
-        }
-    }
+      }
 
     ngOnDestroy(): void {
         if (this.slider && typeof this.slider.destroy === 'function') {

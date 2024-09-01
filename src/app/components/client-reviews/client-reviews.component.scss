@@ -1,3 +1,5 @@
+
+
 .review-container {
     position: relative;
     height: 250px;
@@ -13,3 +15,15 @@
   height: 300px;
   max-height: 100vh;
 }  
+svg{
+    height: 20px;
+    width: 20px;
+}
+.btn-wrapper{
+    padding: 5px;
+    border:2px solid linear-gradient(45deg, chocolate, gray);
+    background-color: none;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+}
