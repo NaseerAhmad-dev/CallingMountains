@@ -1,23 +1,23 @@
-<section class="d-flex main-wrapper rounded mx-auto w-85 client-review-wrapper justify-content-center align-items-center p-4 flex-column">
-  <div> <p class="text-secondary fw-bolder font-100">
+
+<section class="main-wrapper rounded mx-auto w-85 client-review-wrapper p-4 my-2">
+  <div class="d-flex mx-auto">
+    <p class="text-secondary fw-bolder font-100">
       What Clients Say
-      Read testimonials from our satisfied clients </p>
+      Read testimonials from our satisfied clients
+    </p>
   </div>
-
-  <div class="keen-slider d-flex justify-content-center gap-2 align-items-center w-100" #sliderRef style="font-size: 3px;">
-    @for (review of reviews; track $index) {
- <div class="keen-slider__slide d-flex " [ngClass]="'number-slide' + ($index +1)" 
-      style="border: 2px solid green ;"> 
-      <div class="name-profile-img " style="border:2px solid rgb(255, 0, 242) !important">
-        <img alt="Card" [src]="review.image" />
-        <p class="m-0">{{review.name}}</p>
+  <div class="keen-slider d-flex  gap-4 overflow-hidden" #sliderRef>
+    <div *ngFor="let review of reviews; let i = index" class="keen-slider__slide d-flex card w-md-25 w-100 p-4" [ngClass]="'number-slide' + (i + 1)">
+      <div class="flex flex-column">
+        <div class="name-profile-img d-flex justify-content-center align-items-center">
+          <img alt="Card" height="40" width="40" [src]="review.image" />
+          <p class="m-0 fw-bolder">{{review.name}}</p>
+        </div>
+        <div class="">
+          <p class="review-description m-0 h-100">{{review.review}}</p>
+          <p-rating [(ngModel)]="review.rating" [readonly]="true" [cancel]="false"></p-rating>
+        </div>
       </div>
-      <div style="max-height: 20%;">
-        <p style="border:2px solid red !important">{{review.review}}</p>
-      </div>
-
     </div>
-
-    }
   </div>
 </section>

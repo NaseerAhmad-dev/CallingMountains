@@ -27,6 +27,7 @@ export class ClientReviewsComponent {
     @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
     slider: KeenSliderInstance | any = null
 
+    
     reviews: Review[] = [];
     currentReviewIndex: number = 0;
     intervalId: any;
@@ -41,12 +42,21 @@ export class ClientReviewsComponent {
 
     ngAfterViewInit(): void {
         if (isPlatformBrowser(this.platformId)) {
-          this.slider = new KeenSlider(this.sliderRef.nativeElement, {
-            loop: true,
-            mode: "snap",
-            rtl: false,
-          slides: { perView: "auto" },
-          });
+            this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+                slides: {
+                  perView: 1,
+                  spacing: 15,
+                },
+                breakpoints: {
+                  '(min-width: 768px)': {
+                    slides: {
+                      perView: 2, // Adjust this based on how many you want to show on larger screens
+                      spacing: 15,
+                    },
+                  },
+                  // Add more breakpoints if needed
+                },
+              });
         }
       }
 
@@ -55,7 +65,7 @@ export class ClientReviewsComponent {
             {
                 id: 1,
                 name: "Naseer Ahmad",
-                image: "assets/slide-3.jpg",
+                 image: "assets/banner-1.jpg",
                 location: "Sopore, Kashmir",
                 rating:5,
                 review: "An unforgettable trip! The city’s vibrant culture and stunning architecture were beyond my expectations."
@@ -63,7 +73,7 @@ export class ClientReviewsComponent {
             {
                 id: 2,
                 name: "Inayat Khan",
-                image: "assets/slider-1.jpg",
+                 image: "assets/banner-1.jpg",
                 location: "Srinagar, Pakistan",
                 rating:5,
                 review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
@@ -71,7 +81,7 @@ export class ClientReviewsComponent {
             {
                 id: 3,
                 name: "Ali Raza",
-                image: "assets/slider-1.jpg",
+                 image: "assets/banner-1.jpg",
                 location: "Islamabad Kashmir",
                 rating:5,
                 review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
@@ -79,7 +89,7 @@ export class ClientReviewsComponent {
             {
                 id: 4,
                 name: "Fatima Zahra",
-                image: "assets/slider-1.jpg",
+                 image: "assets/banner-1.jpg",
                 location: "United Kingdom",
                 rating:5,
                 review: "A scenic paradise! Murree’s lush greenery and cool climate make it a must-visit for nature lovers."
@@ -87,7 +97,7 @@ export class ClientReviewsComponent {
             {
                 id: 5,
                 name: "Hassan Ali",
-                image: "assets/slider-1.jpg",
+                 image: "assets/banner-1.jpg",
                 location: "Quetta, Pakistan",
                 rating:4,
                 review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
