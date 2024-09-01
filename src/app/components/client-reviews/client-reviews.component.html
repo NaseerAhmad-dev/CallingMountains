@@ -1,47 +1,23 @@
 <section class="d-flex main-wrapper rounded mx-auto w-85 client-review-wrapper justify-content-center align-items-center p-4 flex-column">
-     <div>
-        <p class="text-secondary fw-bolder font-100">
-            What Clients Say
-            Read testimonials from our satisfied clients
-        </p>
+  <div> <p class="text-secondary fw-bolder font-100">
+      What Clients Say
+      Read testimonials from our satisfied clients </p>
+  </div>
+
+  <div class="keen-slider d-flex justify-content-center gap-2 align-items-center w-100" #sliderRef style="font-size: 3px;">
+    @for (review of reviews; track $index) {
+ <div class="keen-slider__slide d-flex " [ngClass]="'number-slide' + ($index +1)" 
+      style="border: 2px solid green ;"> 
+      <div class="name-profile-img " style="border:2px solid rgb(255, 0, 242) !important">
+        <img alt="Card" [src]="review.image" />
+        <p class="m-0">{{review.name}}</p>
+      </div>
+      <div style="max-height: 20%;">
+        <p style="border:2px solid red !important">{{review.review}}</p>
+      </div>
+
     </div>
 
-    <div class="keen-slider d-flex justify-content-center overflow-hidden gap-2 align-items-center w-100" style="border:3px solid greenyellow" #sliderRef >
-      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
-        slide-1
-      </div>
-      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
-        slide-2
-      </div>
-      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
-        slide-3
-      </div>
-      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
-        slide-4
-      </div>
-      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
-        slide-5
-      </div>
-      <!-- @for (review of reviews; track $index) {
-        <p-card [header]="review.name" subheader="Card Subheader" class="p-2" [ngClass]="'id'">
-          <ng-template pTemplate="header" class="w-25">
-              <img alt="Card" style="border-radius: 100%;" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-          </ng-template>
-          <p>
-              {{review.review}}
-          </p>
-          <ng-template pTemplate="footer">
-              <div class="flex gap-3 mt-1">
-                <p-rating  [cancel]="false"  [readonly]="true" />
-
-              </div>
-          </ng-template>
-      </p-card>
-      } -->
-    </div>
-</section> 
-
-
-
-
-  
+    }
+  </div>
+</section>

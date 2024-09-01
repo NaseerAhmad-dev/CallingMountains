@@ -5,19 +5,21 @@ import { PLATFORM_ID, Inject } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
 
 interface Review {
     id: number;
     name: string;
     image: string;
     location: string,
+    rating:number,
     review: string;
 }
 
 @Component({
     selector: 'app-client-reviews',
     standalone: true,
-    imports: [CommonModule,CardModule, ButtonModule,RatingModule],
+    imports: [CommonModule,CardModule, ButtonModule,RatingModule, FormsModule],
     templateUrl: './client-reviews.component.html',
     styleUrls: ['./client-reviews.component.scss']
 })
@@ -55,6 +57,7 @@ export class ClientReviewsComponent {
                 name: "Naseer Ahmad",
                 image: "assets/slide-3.jpg",
                 location: "Sopore, Kashmir",
+                rating:5,
                 review: "An unforgettable trip! The city’s vibrant culture and stunning architecture were beyond my expectations."
             },
             {
@@ -62,6 +65,7 @@ export class ClientReviewsComponent {
                 name: "Inayat Khan",
                 image: "assets/slider-1.jpg",
                 location: "Srinagar, Pakistan",
+                rating:5,
                 review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
             },
             {
@@ -69,6 +73,7 @@ export class ClientReviewsComponent {
                 name: "Ali Raza",
                 image: "assets/slider-1.jpg",
                 location: "Islamabad Kashmir",
+                rating:5,
                 review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
             },
             {
@@ -76,6 +81,7 @@ export class ClientReviewsComponent {
                 name: "Fatima Zahra",
                 image: "assets/slider-1.jpg",
                 location: "United Kingdom",
+                rating:5,
                 review: "A scenic paradise! Murree’s lush greenery and cool climate make it a must-visit for nature lovers."
             },
             {
@@ -83,6 +89,7 @@ export class ClientReviewsComponent {
                 name: "Hassan Ali",
                 image: "assets/slider-1.jpg",
                 location: "Quetta, Pakistan",
+                rating:4,
                 review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
             }
         ];
