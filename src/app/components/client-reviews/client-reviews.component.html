@@ -1,6 +1,6 @@
 
 <section class="main-wrapper rounded mx-auto w-85 client-review-wrapper p-4 my-2">
-  <div class="d-flex mx-auto justify-content-between mb-2">
+  <div class="d-flex mx-auto justify-content-between mb-2 flex-wrap">
     <p class="text-secondary fw-bolder font-500">
       What Clients Say
       Read testimonials from our satisfied clients
@@ -10,8 +10,9 @@
       <!-- Left Arrow Button -->
       <span class="btn-wrapper cursor-pointer d-flex justify-content-center align-items-center rounded-circle">
         <svg
-          [ngClass]="'arrow arrow--left'"
-          (click)="goToPreviousSlide()"
+        [ngClass]="
+        'arrow arrow--left ' + (currentSlide === 0 ? 'arrow--disabled' : '')"
+      (click)="slider.prev()"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -24,9 +25,14 @@
       <!-- Right Arrow Button -->
       <span class="btn-wrapper cursor-pointer mr-2 d-flex justify-content-center align-items-center rounded-circle">
         <svg
-          *ngIf="slider"
-          [ngClass]="'arrow arrow--right'"
-          (click)="goToNextSlide()"
+        *ngIf="slider"
+        [ngClass]="
+          'arrow arrow--right ' +
+          (slider.track.details.slides.length - 1 === currentSlide
+            ? 'arrow--disabled'
+            : '')
+        "
+        (click)="slider.next()"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

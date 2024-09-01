@@ -46,16 +46,16 @@ export class ClientReviewsComponent {
     ngAfterViewInit(): void {
         if (isPlatformBrowser(this.platformId)) {
             this.slider = new KeenSlider(this.sliderRef.nativeElement, {
-                loop: false, // Set to false to control loop manually
+                loop: true, // Set to false to control loop manually
                 slides: {
                   perView: 1, // Adjust as per your setup
-                  spacing: 2,
+                  spacing: 15,
                 },
 
                 breakpoints: {
                     '(min-width: 768px)': {
                       slides: {
-                        perView: 1,  // More slides per view on larger screens
+                        perView: 2,  // More slides per view on larger screens
                         spacing:0,
                       },
                     },
@@ -66,6 +66,8 @@ export class ClientReviewsComponent {
                       },
                     },
                   },
+
+                  
                 slideChanged: (slider) => {
                   this.currentSlide = slider.track.details.rel;
                 },
@@ -116,32 +118,7 @@ export class ClientReviewsComponent {
                 review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
             }
         ];
-
-
     }
-    goToPreviousSlide() {
-        if (this.currentSlide === 0) {
-          // Move to the last slide but add an extra step for smooth transition
-          this.slider.moveToIdx(this.totalSlides, true, () => {
-            // Once animation ends, reset to actual last slide instantly
-            this.slider.moveToIdx(this.totalSlides - 1, false);
-          });
-        } else {
-          this.slider.prev();
-        }
-      }
-    
-      goToNextSlide() {
-        if (this.currentSlide === this.totalSlides - 1) {
-          // Move to the first slide but add an extra step for smooth transition
-          this.slider.moveToIdx(0, true, () => {
-            // Once animation ends, reset to actual first slide instantly
-            this.slider.moveToIdx(0, false);
-          });
-        } else {
-          this.slider.next();
-        }
-      }
 
     ngOnDestroy(): void {
         if (this.slider && typeof this.slider.destroy === 'function') {
