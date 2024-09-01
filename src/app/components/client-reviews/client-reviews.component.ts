@@ -2,6 +2,9 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
 import { PLATFORM_ID, Inject } from '@angular/core';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { RatingModule } from 'primeng/rating';
 
 interface Review {
     id: number;
@@ -14,7 +17,7 @@ interface Review {
 @Component({
     selector: 'app-client-reviews',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule,CardModule, ButtonModule,RatingModule],
     templateUrl: './client-reviews.component.html',
     styleUrls: ['./client-reviews.component.scss']
 })
@@ -39,7 +42,7 @@ export class ClientReviewsComponent {
           this.slider = new KeenSlider(this.sliderRef.nativeElement, {
             loop: true,
             mode: "snap",
-          rtl: false,
+            rtl: false,
           slides: { perView: "auto" },
           });
         }

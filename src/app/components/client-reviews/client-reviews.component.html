@@ -6,45 +6,39 @@
         </p>
     </div>
 
-    <div class="keen-slider d-flex justify-content-center overflow-hidden align-items-center" #sliderRef>
-      <div
-        class="keen-slider__slide number-slide1 overflow-hidden"
-        style="width: 150px; max-width: 150px"
-      >
-        1
+    <div class="keen-slider d-flex justify-content-center overflow-hidden gap-2 align-items-center w-100" style="border:3px solid greenyellow" #sliderRef >
+      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
+        slide-1
       </div>
-      <div
-        class="keen-slider__slide number-slide2 overflow-hidden"
-        style="min-width: 100px; max-width: 100px"
-      >
-        2
+      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
+        slide-2
       </div>
-      <div
-        class="keen-slider__slide number-slide3 overflow-hidden"
-        style="min-width: 200px; max-width: 200px"
-      >
-        3
+      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
+        slide-3
       </div>
-      <div
-        class="keen-slider__slide number-slide4 overflow-hidden"
-        style="min-width: 500px; max-width: 500px"
-      >
-        4
+      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
+        slide-4
       </div>
-      <div
-        class="keen-slider__slide number-slide5 overflow-hidden"
-        style="min-width: 150px; max-width: 150px"
-      >
-        5
+      <div class="keen-slider__slide number-slide1 overflow-hidden card w-25">
+        slide-5
       </div>
-      <div
-        class="keen-slider__slide number-slide6 overflow-hidden"
-        style="width: 75px; max-width: 75px"
-      >
-        6
-      </div>
+      <!-- @for (review of reviews; track $index) {
+        <p-card [header]="review.name" subheader="Card Subheader" class="p-2" [ngClass]="'id'">
+          <ng-template pTemplate="header" class="w-25">
+              <img alt="Card" style="border-radius: 100%;" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+          </ng-template>
+          <p>
+              {{review.review}}
+          </p>
+          <ng-template pTemplate="footer">
+              <div class="flex gap-3 mt-1">
+                <p-rating  [cancel]="false"  [readonly]="true" />
+
+              </div>
+          </ng-template>
+      </p-card>
+      } -->
     </div>
-    
 </section> 
 
 
