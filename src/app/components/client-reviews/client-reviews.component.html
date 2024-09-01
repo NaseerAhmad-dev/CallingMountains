@@ -1,45 +1,53 @@
-<section class="d-flex main-wrapper rounded mx-auto w-85 client-review-wrapper justify-content-center align-items-center flex-column">
-    <div>
+<section class="d-flex main-wrapper rounded mx-auto w-85 client-review-wrapper justify-content-center align-items-center p-4 flex-column">
+     <div>
         <p class="text-secondary fw-bolder font-100">
             What Clients Say
             Read testimonials from our satisfied clients
         </p>
     </div>
-    <div class="container my-5">
-        <div class="d-flex gap-4">  
-            <div class="d-flex flex-column align-items-center text-primary">
-                <div class="review-container w-100 w-md-50 position-relative d-flex justify-content-center">
-                    <div class="review-card" *ngFor="let review of reviews; let i = index"
-                        [class.active]="i === currentReviewIndex" [class.previous]="i === currentReviewIndex - 1"
-                        [class.next]="i === currentReviewIndex + 1">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3 mr-5 gap-3">
-                                <img [src]="review.image" class="rounded-circle " alt="" height="100" width="100">
-                                <div class="d-flex flex-column gap-2">
-                                    <h5 class="card-title mb-0">{{ review.name }}</h5>
-                                    <h6 class="card-title mb-0">{{review.location}}</h6>
-                                </div>
-                            </div>
-                            <p class="card-text d-flex justify-content-center">{{ review.review }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <div class="keen-slider d-flex justify-content-center overflow-hidden align-items-center" #sliderRef>
+      <div
+        class="keen-slider__slide number-slide1 overflow-hidden"
+        style="width: 150px; max-width: 150px"
+      >
+        1
+      </div>
+      <div
+        class="keen-slider__slide number-slide2 overflow-hidden"
+        style="min-width: 100px; max-width: 100px"
+      >
+        2
+      </div>
+      <div
+        class="keen-slider__slide number-slide3 overflow-hidden"
+        style="min-width: 200px; max-width: 200px"
+      >
+        3
+      </div>
+      <div
+        class="keen-slider__slide number-slide4 overflow-hidden"
+        style="min-width: 500px; max-width: 500px"
+      >
+        4
+      </div>
+      <div
+        class="keen-slider__slide number-slide5 overflow-hidden"
+        style="min-width: 150px; max-width: 150px"
+      >
+        5
+      </div>
+      <div
+        class="keen-slider__slide number-slide6 overflow-hidden"
+        style="width: 75px; max-width: 75px"
+      >
+        6
+      </div>
     </div>
-</section>
-<!-- 
-<div class="card">
-<p-fieldset>
-    <ng-template pTemplate="header">
-        <div class="flex align-items-center gap-2 px-2">
-            <p-avatar 
-                image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" 
-                shape="circle" />
-            <span class="font-bold">Amy Elsner</span>
-        </div>
-    </ng-template>
-    <p class="m-0">
-        Lorem ipsum dolor sit amet...
-    </p>
-</p-fieldset></div> -->
+    
+</section> 
+
+
+
+
+  

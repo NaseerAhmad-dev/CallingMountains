@@ -1,80 +1,100 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FieldsetModule } from 'primeng/fieldset';
-import { AvatarModule } from 'primeng/avatar';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import KeenSlider, { KeenSliderInstance } from "keen-slider"
+import { PLATFORM_ID, Inject } from '@angular/core';
 
 interface Review {
-  id: number;
-  name: string;
-  image: string;
-  location:string,
-  review: string;
+    id: number;
+    name: string;
+    image: string;
+    location: string,
+    review: string;
 }
 
 @Component({
-  selector: 'app-client-reviews',
-  standalone: true,
-  imports: [FieldsetModule, AvatarModule, CommonModule],
-  templateUrl: './client-reviews.component.html',
-  styleUrl: './client-reviews.component.scss'
+    selector: 'app-client-reviews',
+    standalone: true,
+    imports: [CommonModule],
+    templateUrl: './client-reviews.component.html',
+    styleUrls: ['./client-reviews.component.scss']
 })
 export class ClientReviewsComponent {
+    @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
+    slider: KeenSliderInstance | any = null
 
-   reviews: Review[] = [];
+    reviews: Review[] = [];
     currentReviewIndex: number = 0;
     intervalId: any;
+    showReview:boolean = false;
 
-    constructor() {}
+    constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
     ngOnInit(): void {
         this.loadReviews();
         // this.startAutoPlay();
     }
 
-    loadReviews(): void {
-      this.reviews = [
-        {
-            id: 1,
-            name: "Naseer Ahmad",
-            image: "assets/slide-3.jpg",
-            location: "Sopore, Kashmir",
-            review: "An unforgettable trip! The city’s vibrant culture and stunning architecture were beyond my expectations."
-        },
-        {
-            id: 2,
-            name: "Inayat Khan",
-            image: "assets/slider-1.jpg",
-            location: "Srinagar, Pakistan",
-            review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
-        },
-        {
-            id: 3,
-            name: "Ali Raza",
-            image: "assets/slider-1.jpg",
-            location: "Islamabad Kashmir",
-            review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
-        },
-        {
-            id: 4,
-            name: "Fatima Zahra",
-            image: "assets/slider-1.jpg",
-            location: "United Kingdom",
-            review: "A scenic paradise! Murree’s lush greenery and cool climate make it a must-visit for nature lovers."
-        },
-        {
-            id: 5,
-            name: "Hassan Ali",
-            image: "assets/slider-1.jpg",
-            location: "Quetta, Pakistan",
-            review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
+    ngAfterViewInit(): void {
+        if (isPlatformBrowser(this.platformId)) {
+          this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+            loop: true,
+            mode: "snap",
+          rtl: false,
+          slides: { perView: "auto" },
+          });
         }
-    ];
-    
-    
+      }
+
+    loadReviews(): void {
+        this.reviews = [
+            {
+                id: 1,
+                name: "Naseer Ahmad",
+                image: "assets/slide-3.jpg",
+                location: "Sopore, Kashmir",
+                review: "An unforgettable trip! The city’s vibrant culture and stunning architecture were beyond my expectations."
+            },
+            {
+                id: 2,
+                name: "Inayat Khan",
+                image: "assets/slider-1.jpg",
+                location: "Srinagar, Pakistan",
+                review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
+            },
+            {
+                id: 3,
+                name: "Ali Raza",
+                image: "assets/slider-1.jpg",
+                location: "Islamabad Kashmir",
+                review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
+            },
+            {
+                id: 4,
+                name: "Fatima Zahra",
+                image: "assets/slider-1.jpg",
+                location: "United Kingdom",
+                review: "A scenic paradise! Murree’s lush greenery and cool climate make it a must-visit for nature lovers."
+            },
+            {
+                id: 5,
+                name: "Hassan Ali",
+                image: "assets/slider-1.jpg",
+                location: "Quetta, Pakistan",
+                review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
+            }
+        ];
+
+
     }
-    ngOnDestroy() {
-        clearInterval(this.intervalId);
-    }
+    
+    // ngAfterViewInit() {
+    //     this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+    //       loop: false,
+    //       mode: "snap",
+    //       rtl: false,
+    //       slides: { perView: "auto" },
+    //     })
+    //   }
 
     startAutoPlay() {
         this.intervalId = setInterval(() => {
@@ -97,5 +117,11 @@ export class ClientReviewsComponent {
             this.currentReviewIndex = 0;
         }
     }
-  
-  }
+
+    ngOnDestroy(): void {
+        if (this.slider && typeof this.slider.destroy === 'function') {
+          this.slider.destroy();
+        }
+      }
+
+}
