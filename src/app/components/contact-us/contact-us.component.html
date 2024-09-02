@@ -19,9 +19,9 @@
 
     </div>
     <div class="d-flex flex-column flex-wrap justify-content-center align-items-center">
-        <h3 class="col-12 col-md-9 mb-2 text-secondary text-bold">Fill This Form, We Will Take Care For The Rest</h3>
-        <form [formGroup]="contactFrom" class="w-100 row  align-items-center  d-flex flex-column" (ngSubmit)="onSubmit()">
-           <div class="d-flex align-items-center justify-content-center flex-column">
+        <h3 class="col-12 col-md-9 mb-md-2 m-0 contact-us-header ">Fill the Enquiry  we will take care rest</h3>
+        <form [formGroup]="contactFrom" class="w-100 row d-flex flex-column align-items-center" (ngSubmit)="onSubmit()">
+           <div class="d-flex align-items-center justify-content-center flex-column p-0 ">
             @for (control of formData; track $index) {
                 @switch (control.control_type) {
                 @case ('text') {
