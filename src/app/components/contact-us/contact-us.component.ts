@@ -7,12 +7,13 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { MapComponentComponent } from '../map-component/map-component.component';
 
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [TagModule, ReactiveFormsModule, CalendarModule,ToastModule, ButtonModule, RippleModule], // This should include GMapModule
+  imports: [TagModule, ReactiveFormsModule, CalendarModule,ToastModule, ButtonModule, RippleModule, MapComponentComponent], // This should include GMapModule
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss'], // Corrected to styleUrls
   providers: [MessageService]
