@@ -16,6 +16,7 @@ interface Review {
     location: string,
     rating:number,
     review: string;
+    flag:string;
 }
 
 @Component({
@@ -27,7 +28,7 @@ interface Review {
 })
 export class ClientReviewsComponent {
     @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
-    slider: KeenSliderInstance | any = null
+    slider!: KeenSliderInstance;
     currentSlide:number = 0;
     totalSlides:number = 0;
     
@@ -83,6 +84,7 @@ export class ClientReviewsComponent {
                  image: "assets/banner-1.jpg",
                 location: "Sopore, Kashmir",
                 rating:5,
+                flag:'in',
                 review: "An unforgettable trip! The city’s vibrant culture and stunning architecture were beyond my expectations."
             },
             {
@@ -91,6 +93,7 @@ export class ClientReviewsComponent {
                  image: "assets/banner-1.jpg",
                 location: "UttarPradesh, India",
                 rating:5,
+                flag:'in',
                 review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
             },
             {
@@ -98,6 +101,7 @@ export class ClientReviewsComponent {
                 name: "Ali Raza",
                  image: "assets/banner-1.jpg",
                 location: "United Kingdom",
+                flag:'uk',
                 rating:5,
                 review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
             },
@@ -105,15 +109,17 @@ export class ClientReviewsComponent {
                 id: 4,
                 name: "Fatima Zahra",
                  image: "assets/banner-1.jpg",
-                location: "United Kingdom",
+                location: "United States",
+                flag:'us',
                 rating:5,
                 review: "A scenic paradise! Murree’s lush greenery and cool climate make it a must-visit for nature lovers."
             },
             {
                 id: 5,
-                name: "Hassan Ali",
+                name: "Raj Kumar",
                  image: "assets/banner-1.jpg",
                 location: "Mumbai, Maharastra",
+                flag:'in',
                 rating:4,
                 review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
             }
