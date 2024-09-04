@@ -8,12 +8,13 @@ import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { MapComponentComponent } from '../map-component/map-component.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [TagModule, ReactiveFormsModule, CalendarModule,ToastModule, ButtonModule, RippleModule, MapComponentComponent], // This should include GMapModule
+  imports: [TagModule, ReactiveFormsModule, CalendarModule, ToastModule, ButtonModule, RippleModule, MapComponentComponent, CommonModule], // This should include GMapModule
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss'], // Corrected to styleUrls
   providers: [MessageService]
@@ -21,9 +22,10 @@ import { MapComponentComponent } from '../map-component/map-component.component'
 export class ContactUsComponent {
   contactFrom: any = new FormGroup({});
   formData!: any[];
+  submitted: boolean = false;
   private dataService = inject(DataserviceService);
   private _fb = inject(FormBuilder);
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService) { }
 
   ngOnInit() {
     this.formData = this.dataService.getContactFormData();
@@ -48,12 +50,35 @@ export class ContactUsComponent {
       if (val.mandation) validators.push(Validators.required)
       if (val.min) validators.push(Validators.minLength(val.min.column_minlength as number))
       if (val.max) validators.push(Validators.maxLength(val.max.column_maxlength as number))
-      if (val.mobile) validators.push(Validators.pattern(/^\+?\d{10,15}$/));
+      if (val.phone) validators.push(Validators.pattern(/^\+?\d{10,15}$/));
       if (val.email) validators.push(Validators.email);
     });
     return validators;
   }
-  onSubmit(){
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Form Submission sucessfull' })
+  isControlInvalid(controlName: string) {
+    return this.contactFrom.get(controlName.toString())?.invalid && this.submitted;
+  }
+
+  isInvalid(controlName:string){
+    return this.contactFrom.get(controlName.toString())?.invalid
+  }
+
+  getErrorType(controlName: string): string {
+    const error = this.contactFrom.get(controlName.toString())?.errors;
+    if (error?.required) {
+      return 'Mandatory Field';
+    } else if (error?.pattern) {
+      return 'Invalid Mobile Number';
+    } else if (error?.email) {
+      return 'Invalid Email';
+    }
+    return ''
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if(this.contactFrom.valid){
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Enquiry Submitted' });
+    }
   }
 }
