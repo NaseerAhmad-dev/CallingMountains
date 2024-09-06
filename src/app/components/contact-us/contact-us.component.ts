@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { MapComponentComponent } from '../map-component/map-component.component';
 import { CommonModule } from '@angular/common';
+import emailjs from '@emailjs/browser'
 
 
 @Component({
@@ -59,7 +60,7 @@ export class ContactUsComponent {
     return this.contactFrom.get(controlName.toString())?.invalid && this.submitted;
   }
 
-  isInvalid(controlName:string){
+  isInvalid(controlName: string) {
     return this.contactFrom.get(controlName.toString())?.invalid
   }
 
@@ -75,10 +76,29 @@ export class ContactUsComponent {
     return ''
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
-    if(this.contactFrom.valid){
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Enquiry Submitted' });
+    if (this.contactFrom.valid) {
+      emailjs.init('hh_IUs_3aBeuzxZNX')
+      let response = await emailjs.send("service_y04bg3k", "template_qnatw0y", {
+        from_name: this.contactFrom.value.name,
+        message: this.contactFrom.value.message,
+        contact: this.contactFrom.value.phone,
+        email: this.contactFrom.value.email,
+      })
+      if (response.status === 200) {
+        await emailjs.send("service_y04bg3k","template_n7m9ahj",{
+          from_name: this.contactFrom.value.name,
+          email:  this.contactFrom.value.email,
+          });
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Enquiry Submitted' });
+        this.submitted = false;
+        this.contactFrom.reset();
+      } else {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please retry submitting' });
+      }
     }
   }
 }
+
+

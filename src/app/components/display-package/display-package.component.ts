@@ -62,7 +62,6 @@ export class DisplayPackageComponent {
             {
                 this.pack = res;
                 this.loading = false;
-                console.log("Response Fetched ....!" + JSON.stringify(res))
             }
         });
     }
