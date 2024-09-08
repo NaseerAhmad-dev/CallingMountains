@@ -11,7 +11,6 @@ import { MapComponentComponent } from '../map-component/map-component.component'
 import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser'
 
-
 @Component({
   selector: 'app-contact-us',
   standalone: true,
@@ -24,6 +23,7 @@ export class ContactUsComponent {
   contactFrom: any = new FormGroup({});
   formData!: any[];
   submitted: boolean = false;
+  spinner: boolean = false;
   private dataService = inject(DataserviceService);
   private _fb = inject(FormBuilder);
   constructor(private messageService: MessageService) { }
@@ -80,6 +80,7 @@ export class ContactUsComponent {
     this.submitted = true;
     if (this.contactFrom.valid) {
       emailjs.init('hh_IUs_3aBeuzxZNX')
+      this.spinner = true;
       let response = await emailjs.send("service_y04bg3k", "template_qnatw0y", {
         from_name: this.contactFrom.value.name,
         message: this.contactFrom.value.message,
@@ -87,18 +88,31 @@ export class ContactUsComponent {
         email: this.contactFrom.value.email,
       })
       if (response.status === 200) {
-        await emailjs.send("service_y04bg3k","template_n7m9ahj",{
-          from_name: this.contactFrom.value.name,
-          email:  this.contactFrom.value.email,
-          });
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Enquiry Submitted' });
-        this.submitted = false;
+        this.sendReplyMail();
+        this.showSucessPopup()
         this.contactFrom.reset();
+        this.spinner = false;
       } else {
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please retry submitting' });
+        this.showErrorPopup()
       }
     }
   }
+  async sendReplyMail() {
+    await emailjs.send("service_y04bg3k", "template_n7m9ahj", {
+      from_name: this.contactFrom.value.name,
+      email: this.contactFrom.value.email,
+    });
+  }
+
+  showSucessPopup() {
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Enquiry Submitted' });
+    this.submitted = false;
+  }
+
+  showErrorPopup() {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please retry submitting' });
+  }
+
 }
 
 
