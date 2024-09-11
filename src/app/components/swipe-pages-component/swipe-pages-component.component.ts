@@ -7,6 +7,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { Router } from '@angular/router';
+import { CardModule } from 'primeng/card';
 
 export interface Activity {
     day: string;
@@ -26,13 +27,13 @@ export interface Activity {
     rating: number;
     destinations: string[];
     activities: Activity[];
-    inclusions: string[] | string[];
+    inclusions: string[] ;
   }
 
 @Component({
   selector: 'app-swipe-pages-component',
   standalone: true,
-  imports: [CarouselModule, ButtonModule, TagModule],
+  imports: [CarouselModule, ButtonModule, TagModule, CardModule],
   providers: [],
   templateUrl: './swipe-pages-component.component.html',
   styleUrl: './swipe-pages-component.component.scss'

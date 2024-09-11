@@ -79,8 +79,8 @@ export class ContactUsComponent {
   async onSubmit() {
     this.submitted = true;
     if (this.contactFrom.valid) {
-      emailjs.init('hh_IUs_3aBeuzxZNX')
       this.spinner = true;
+      emailjs.init('hh_IUs_3aBeuzxZNX')
       let response = await emailjs.send("service_y04bg3k", "template_qnatw0y", {
         from_name: this.contactFrom.value.name,
         message: this.contactFrom.value.message,

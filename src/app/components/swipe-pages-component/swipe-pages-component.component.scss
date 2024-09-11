@@ -4,7 +4,10 @@
     border-radius: 10px;
     margin-bottom: 1rem;
  }
-
+ .p-card-content{
+    padding: 0px;
+    border: 2px solid green;
+ }
  @media (max-width: 768px) {
     .card {
         padding: 0;

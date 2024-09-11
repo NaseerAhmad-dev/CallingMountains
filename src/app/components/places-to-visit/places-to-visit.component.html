@@ -1,15 +1,30 @@
-
-
-
-<div class="row mx-auto">
-    <div *ngFor="let place of places"
-         pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout"
-         class="col-12 col-md-4 mx-auto d-flex flex-column align-items-center justify-content-center box border-0 shadow-0 mb-2 animation-duration-1000 text-center">
-      <img [src]="place.ImgUrl" class="card-img-top" alt="{{ place.name }}" style="height: 300px; width: 300px; object-fit: cover;">
-      <div class="py-2 bg-green w-100">
-        <h5 class="text-primary">{{ place.name }}</h5>
+<div class="d-flex justify-content-center flex-column mt-2 bg-white">
+  <p class="client-heading col-md-6 d-flex justify-content-center my-2 w-100 px-1 p-md-0">Places to visit in Kashmir</p>
+  <p-carousel
+    [value]="places" [numVisible]="3" [numScroll]="1" 
+    [showNavigators]="true" [responsiveOptions]="responsiveOptions">
+    <ng-template let-pack pTemplate="item" class="d-flex justify-content-center gap-3">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <img [src]="pack.ImgUrl" class="card-img-top" alt="{{ pack.name }}" style="object-fit: cover;">
+        <div class="py-2 bg-green w-100 d-flex justify-content-center  ">
+          <h5 class="text-primary">{{ pack.name }}</h5>
+        </div>
       </div>
-    </div>
-  </div>
-  
-  
+    </ng-template>
+  </p-carousel>
+</div>
+
+
+
+
+
+<!-- <div class="row mx-auto">
+        <div *ngFor="let place of places"
+             pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout"
+             class="col-12 col-md-4 mx-auto d-flex flex-column align-items-center justify-content-center box border-0 shadow-0 mb-2 animation-duration-1000 text-center">
+          <img [src]="place.ImgUrl" class="card-img-top" alt="{{ place.name }}" style="height: 300px; width: 300px; object-fit: cover;">
+          <div class="py-2 bg-green w-100">
+            <h5 class="text-primary">{{ place.name }}</h5>
+          </div>
+        </div>
+      </div> -->
