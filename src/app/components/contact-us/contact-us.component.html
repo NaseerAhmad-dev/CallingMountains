@@ -1,5 +1,6 @@
 <section class="contact-us-wrapper mx-auto row bg-white">
     <div class="mx-auto gap-3 py-3 d-flex flex-wrap justify-content-center align-items-start">
+       @if(!inDestinationPage){
         <div class="col-md-5 d-flex flex-column gap-3">
             <h3 class="fw-bolder col-12 px-0 mb-md-2 m-0 contact-us-header">Contact Us</h3>
             <div class="d-flex justify-content-between flex-wrap">
@@ -37,10 +38,9 @@
                 </div>
                 <app-map-component></app-map-component>
             </div>
-
-
         </div>
-        <div class="d-flex flex-column flex-wrap justify-content-center align-items-center">
+       } 
+        <div class="d-flex flex-column flex-wrap justify-content-center align-items-center" [ngClass]="{'sticky': inDestinationPage }">
             <h3 class="col-12 px-0 mb-md-2 m-0 contact-us-header ">Fill the Enquiry we will take care rest</h3>
             <form [formGroup]="contactFrom" class="w-100 row d-flex flex-column align-items-center"
                 (ngSubmit)="onSubmit()">

@@ -1,6 +1,6 @@
-<section class="main-wrapper rounded mx-auto w-85 client-review-wrapper p-4 mt-2">
+<section class="main-wrapper rounded mx-auto w-85 client-review-wrapper p-2 mt-2">
   <div class="d-flex mx-auto justify-content-between mb-2 flex-wrap row">
-    <p class=" client-heading col-md-6">What clients say about Us</p>
+    <p class=" client-heading col-md-6 p-0">What clients say about Us</p>
 
     <div class="d-flex gap-2 col-md-6 justify-content-end">
       <span class="btn-wrapper cursor-pointer d-flex justify-content-center align-items-center rounded-circle">
@@ -26,9 +26,9 @@
 
   </div>
   <div class="keen-slider d-flex overflow-hidden" #sliderRef>
-    <div *ngFor="let review of reviews; let i = index" class="keen-slider__slide d-flex card border-2 w-md-25 w-100 p-4"
+    <div *ngFor="let review of reviews; let i = index" class="keen-slider__slide d-flex card border-2 w-md-25 w-100 p-2"
       [ngClass]="'number-slide' + (i + 1)" style="width: 25%">
-      <div class="flex flex-column">
+      <div class="flex flex-column gap-0 gap-md-3 p-0 p-md-2">
         <div class="name-profile-img d-flex gap-3 mb-2 justify-content-start align-items-center">
           <img alt="Card" height="80" width="80" class="rounded-circle" [src]="review.image" />
           <div class="d-flex flex-column gap-1 location-name">

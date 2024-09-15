@@ -1,14 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { CarouselModule } from 'primeng/carousel';
-import { TagModule } from 'primeng/tag';
-import { CarouselComponent } from '../carousel/carousel.component';
-import { HerosectionComponent } from "../herosection/herosection.component";
-import { Router } from '@angular/router';
-import { DataserviceService } from '../services/dataservice.service';
+import {  RouterModule } from '@angular/router';
 import { SwipePagesComponentComponent } from "../swipe-pages-component/swipe-pages-component.component";
+import { ContactUsComponent } from "../contact-us/contact-us.component";
+import { DividerModule } from 'primeng/divider';
+import { MenuItem } from 'primeng/api';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 export interface Product {
   id: string
   code: string;
@@ -24,9 +21,22 @@ export interface Product {
 @Component({
   selector: 'app-packages',
   standalone: true,
-  imports: [CommonModule, CardModule, ButtonModule, CarouselComponent, HerosectionComponent, CarouselModule, ButtonModule, TagModule, SwipePagesComponentComponent],
+  imports: [ DividerModule ,BreadcrumbModule, SwipePagesComponentComponent, ContactUsComponent, RouterModule],
   templateUrl: './packages.component.html',
   styleUrl: './packages.component.scss',
 })
 
-export class PackagesComponent {}
+export class PackagesComponent {
+
+    items: MenuItem[] | undefined;
+
+    home: MenuItem | undefined;
+
+    ngOnInit() {
+        this.items = [
+            { label: 'Popular Plans' }, 
+        ];
+
+        this.home = { icon: 'pi pi-home', routerLink: '/'  };
+    }
+}

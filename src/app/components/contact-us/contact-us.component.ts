@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { TagModule } from 'primeng/tag';
 import { FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
@@ -24,6 +24,7 @@ export class ContactUsComponent {
   formData!: any[];
   submitted: boolean = false;
   spinner: boolean = false;
+  @Input() inDestinationPage:boolean = false;
   private dataService = inject(DataserviceService);
   private _fb = inject(FormBuilder);
   constructor(private messageService: MessageService) { }

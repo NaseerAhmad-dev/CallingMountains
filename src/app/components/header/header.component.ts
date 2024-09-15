@@ -7,14 +7,14 @@ import { SidebarModule } from 'primeng/sidebar'
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MenubarModule, CommonModule, PackagesComponent,SidebarModule],
+  imports: [MenubarModule, CommonModule, PackagesComponent, SidebarModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent{
-  openMenuClicked:boolean = false;
+export class HeaderComponent {
+  openMenuClicked: boolean = false;
   logoUrl: string = 'https://tourmatekashmir.com/images/logo-default-208x46.png'
-  openMenu(){
+  openMenu() {
     this.openMenuClicked = !this.openMenuClicked;
   }
 }

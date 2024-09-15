@@ -80,49 +80,85 @@ export class ClientReviewsComponent {
         this.reviews = [
             {
                 id: 1,
-                name: "Naseer Ahmad",
-                 image: "assets/banner-1.jpg",
-                location: "Sopore, Kashmir",
+                name: "Arjun Sharma ",
+                 image: "assets/review-avtar.svg",
+                location: "Dehli, India",
                 rating:5,
                 flag:'in',
-                review: "An unforgettable trip! The city’s vibrant culture and stunning architecture were beyond my expectations."
+                review: "MagicalMountains made our trip to Kashmir unforgettable! The scenic beauty was breathtaking, and the attention to detail from start to finish was impeccable. Highly recommend their services!"
             },
             {
                 id: 2,
-                name: "Inayat Khan",
-                 image: "assets/banner-1.jpg",
-                location: "UttarPradesh, India",
+                name: "Ananya Patel",
+                 image: "assets/review-avtar.svg",
+                location: "Gujarat, India",
                 rating:5,
                 flag:'in',
-                review: "The perfect getaway! This destination offers breathtaking views and exceptional hospitality."
+                review: "Our Kashmir tour with MagicalMountains was a dream come true. From the comfortable accommodations to the guided tours, everything was perfectly arranged. A five-star experience!"
             },
             {
                 id: 3,
-                name: "Ali Raza",
-                 image: "assets/banner-1.jpg",
-                location: "United Kingdom",
-                flag:'uk',
+                name: "Rohan Gupta",
+                 image: "assets/review-avtar.svg",
+                location: "Uttar Pradesh",
+                flag:'in',
                 rating:5,
-                review: "Amazing experience! The serene landscapes and historic sites made this trip truly memorable."
+                review: "I had an amazing time exploring Kashmir with MagicalMountains. The landscapes were mesmerizing, and the tour guides were incredibly knowledgeable and friendly. Worth every penny!"
             },
             {
                 id: 4,
-                name: "Fatima Zahra",
-                 image: "assets/banner-1.jpg",
-                location: "United States",
-                flag:'us',
+                name: "Priya Desai",
+                 image: "assets/review-avtar.svg",
+                location: "Maharashtra",
+                flag:'in',
                 rating:5,
-                review: "A scenic paradise! Murree’s lush greenery and cool climate make it a must-visit for nature lovers."
+                review: "MagicalMountains provided an excellent tour of Kashmir. The itinerary was well-planned, and the local experiences added a special touch. I couldn't have asked for a better trip!"
             },
             {
                 id: 5,
-                name: "Raj Kumar",
-                 image: "assets/banner-1.jpg",
-                location: "Mumbai, Maharastra",
+                name: "Vikram Singh",
+                 image: "assets/review-avtar.svg",
+                location: "Rajasthan",
                 flag:'in',
-                rating:4,
-                review: "A hidden gem! The rich history and stunning landscapes of Quetta provided an unforgettable adventure."
-            }
+                rating:5,
+                review: "The Kashmir trip organized by MagicalMountains exceeded our expectations. The team’s professionalism and the quality of the tour made our vacation truly magical. Thank you!"
+            },
+            {
+              id: 6,
+              name: "Isha Reddy",
+               image: "assets/review-avtar.svg",
+              location: "Karnataka",
+              flag:'in',
+              rating:5,
+              review: "Our experience with MagicalMountains in Kashmir was outstanding. The tour was well-coordinated, and every moment was filled with awe-inspiring views and great hospitality."
+          },
+          {
+            id: 7,
+            name: "Aarav Mehta",
+             image: "assets/review-avtar.svg",
+            location: "Punjab",
+            flag:'in',
+            rating:4,
+            review: "MagicalMountains truly lived up to their name. The Kashmir tour was meticulously planned, and every detail was taken care of. I highly recommend their services for an unforgettable experience."
+        },
+        {
+          id: 8,
+          name: "Sanya Kapoor ",
+           image: "assets/review-avtar.svg",
+          location: "Haryana",
+          flag:'in',
+          rating:5,
+          review: "The trip to Kashmir arranged by MagicalMountains was fantastic. The stunning landscapes and the smooth travel arrangements made our vacation a memorable one. Great job!"
+      },
+      {
+        id: 9,
+        name: "Neha Bhat",
+         image: "assets/review-avtar.svg",
+        location: "Kashmir ",
+        flag:'in',
+        rating:4,
+        review: "As a local resident, I can say that MagicalMountains knows Kashmir inside out. Their tour was well-curated, showcasing the best of the region. Fantastic experience!"
+    }
         ];
     }
 

@@ -1,15 +1,30 @@
 .card {
-    background: var(--surface-card);
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
- }
- .p-card-content{
-    padding: 0px;
-    border: 2px solid green;
- }
- @media (max-width: 768px) {
-    .card {
-        padding: 0;
-    }
-  }
+   background: var(--surface-card);
+   padding: 2rem;
+   border-radius: 10px;
+   margin-bottom: 1rem;
+}
+
+.home {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+
+p-card {
+   display: flex;
+   // flex-grow: 1;
+}
+
+/* Target the last card and align it to the start */
+p-card:last-child {
+   // flex-grow: 0;           /* Prevent the last card from growing */
+   align-self: flex-start;
+   /* Align the last card to the start */
+}
+
+@media (max-width: 768px) {
+   .card {
+      padding: 0;
+   }
+}

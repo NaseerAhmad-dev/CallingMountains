@@ -1,1 +1,29 @@
-<app-swipe-pages-component></app-swipe-pages-component> 
+<div class="row mx-auto">
+    <div class="d-flex flex-column p-0">
+        <!-- Banner Section -->
+        <div class="d-flex flex-column p-0">
+            <div class="position-relative">
+                <img src="../../../assets/abcbg.jpg" alt="banner" class="w-100  bg-img">
+                <div class="overlay-text d-flex flex-column gap-0 w-md-50">
+                    <p class="p-0 fw-bold font-300 m-0">
+                        Popular Plans
+                <p-breadcrumb class="max-w-full" [model]="items" [home]="home" />
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <!-- Content Section with Swipe Pages and Contact Us -->
+            <div class="d-flex col-md-12 flex-wrap p-2">
+                <!-- Swipe Pages Component with Scrollable Cards -->
+                <app-swipe-pages-component class="col-md-9" [inDestinationPage]="true">
+                </app-swipe-pages-component>
+
+                <!-- Sticky Contact Us Component -->
+                <app-contact-us class="col-md-3" [inDestinationPage]="true">
+                </app-contact-us>
+            </div>
+        </div>
+    </div>

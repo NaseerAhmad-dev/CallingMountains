@@ -1,6 +1,6 @@
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { DataserviceService } from '../services/dataservice.service';
 import { CarouselModule } from 'primeng/carousel';
@@ -40,6 +40,8 @@ export interface Activity {
 })
 export class SwipePagesComponentComponent  implements OnInit {
     packages!: Package[];
+    @Input() width:string ='';
+    @Input() inDestinationPage = false;
 
     responsiveOptions: any;
 

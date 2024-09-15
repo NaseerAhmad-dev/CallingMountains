@@ -10,11 +10,12 @@ import { WebFooterComponent } from "./components/web-footer/web-footer.component
 import { HerosectionComponent } from './components/herosection/herosection.component';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { ChatComponentComponent } from "./components/chat-component/chat-component.component";
+import { HomeComponetComponent } from "./components/home-componet/home-componet.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, RouterOutlet, ScrollTopModule, ClientReviewsComponent, BannerComponent, PackagesComponent, CarouselComponent, PlacesToVisitComponent, HerosectionComponent, WebFooterComponent, ChatComponentComponent],
+  imports: [HeaderComponent, RouterOutlet, ScrollTopModule, ClientReviewsComponent, BannerComponent, PackagesComponent, CarouselComponent, PlacesToVisitComponent, HerosectionComponent, WebFooterComponent, ChatComponentComponent, HomeComponetComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,8 +1,7 @@
-
-<div>
-    <app-herosection></app-herosection>
-</div>
-<app-packages></app-packages>
-<app-places-to-visit></app-places-to-visit>
+<!-- home.component.html -->
+<app-herosection></app-herosection>  <!-- Hero Section -->
+<app-swipe-pages-component [inDestinationPage]="false"></app-swipe-pages-component>  <!-- Swipe Component -->
+<app-places-to-visit></app-places-to-visit>  <!-- Places to Visit -->
 <app-client-reviews></app-client-reviews>
-<app-contact-us></app-contact-us>
+<app-chat-component></app-chat-component>
+<app-contact-us [inDestinationPage]="false"></app-contact-us>  <!-- Contact Us Section -->

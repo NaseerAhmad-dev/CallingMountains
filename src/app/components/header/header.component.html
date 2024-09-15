@@ -8,19 +8,19 @@
       </div>
       <div class="nav-items">
         <ul class="d-flex justify-content-between m-0 gap-3 list-style-none cursor-pointer">
-          <a href="#"  class="text-decoration-none li-link">
-            <li class="font-500">Home</li>
+          <a [routerLink]="['/']" class="text-decoration-none li-link">
+            <li class="font-500" >Home</li>
           </a>
-          <a href="#destination"  class="text-decoration-none li-link">
-            <li class="font-500">Destinations</li>
+          <a  class="text-decoration-none li-link">
+            <li [routerLink]="['/']" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }" class="font-500">Destinations</li>
           </a>
-          <a href="#packages"   class="text-decoration-none li-link">
+          <a [routerLink]="'/destinations'" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }"  class="text-decoration-none li-link">
             <li class="font-500">Popular Plans</li>
           </a>
-          <a href="#about"   class="text-decoration-none li-link">
+          <a [routerLink]="['/about-us']" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }"  class="text-decoration-none li-link">
             <li class="font-500">About Us</li>
           </a>
-          <a href="#contact"   class="text-decoration-none li-link">
+          <a [routerLink]="['/']" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }"   class="text-decoration-none li-link">
             <li class="font-500 ">Contact Us</li>
           </a>
         </ul>
@@ -49,19 +49,19 @@
         <div class="p-2 collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="" >Home</a>
+              <a class="nav-link" [routerLink]="['/']"  >Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#destination" >Destinations</a>
+              <a class="nav-link" [routerLink]="['/']" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }">Destinations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#packages" >Popular Plans</a>
+              <a class="nav-link" [routerLink]="'/destinations'" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }" >Popular Plans</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about" >About Us</a>
+              <a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact" >Contact Us</a>
+              <a class="nav-link" [routerLink]="['/']" routerLinkActive="text-primary fw-bold" [routerLinkActiveOptions]="{ exact: true }">Contact Us</a>
             </li>
           </ul>
         </div>

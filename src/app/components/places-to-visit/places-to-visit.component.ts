@@ -7,7 +7,7 @@ import { TagModule } from 'primeng/tag';
 @Component({
   selector: 'app-places-to-visit',
   standalone: true,
-  imports: [CommonModule,AnimateOnScrollModule ,CarouselModule, ButtonModule, TagModule],
+  imports: [CommonModule, AnimateOnScrollModule, CarouselModule, ButtonModule, TagModule],
   templateUrl: './places-to-visit.component.html',
   styleUrl: './places-to-visit.component.scss'
 })
@@ -15,54 +15,55 @@ export class PlacesToVisitComponent {
 
   places = [
     {
-      name: "Gulmarg",     
-       ImgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL97KHynaYkeJI4Rad_dWOUhC6ZaTcHZFr3Q&s'
-
+      name: "Gulmarg",
+      ImgUrl: 'assets/gulmarg.jpg'
     },
     {
-      name: "Doodhpathri",     
-       ImgUrl:'https://taleof2backpackers.com/wp-content/uploads/2021/07/Doodpathri-unexplored-Kashmir-1.jpg'
+      name: "Doodhpathri",
+      ImgUrl: 'assets/doodhpathri.jpg'
 
     },
     {
       name: "Sonamarg",
-      ImgUrl: 'https://i0.wp.com/travelshoebum.com/wp-content/uploads/2017/04/dsc_9607.jpg?fit=1024%2C613&ssl=1'
+      ImgUrl: 'assets/sonamarg.jpg'
 
     },
     {
       name: "Pahalgam",
-      ImgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1zp8gSg8bNrR6K6XNRR2MuNuvOw20QMsJvQ&s'
+      ImgUrl: 'assets/pahalgam.jpg'
     },
     {
       name: "Srinagar",
-      ImgUrl: 'https://www.holidify.com/images/compressed/1826.jpg?v=1.1'
-
+      ImgUrl: 'assets/srinagar.jpg'
     },
     {
-      name: "Jammu",
-      ImgUrl: 'https://i0.wp.com/travelshoebum.com/wp-content/uploads/2017/04/dsc_9607.jpg?fit=1024%2C613&ssl=1'
-
+      name: "Gurez",
+      ImgUrl: 'assets/gurez.jpg'
+    },
+    {
+      name: "Bangus Valley",
+      ImgUrl: 'assets/bangus.jpg'
     },
   ]
 
   responsiveOptions = [
     {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1
+      breakpoint: '1199px',
+      numVisible: 1,
+      numScroll: 1
     },
     {
-        breakpoint: '991px',
-        numVisible: 2,
-        numScroll: 1
+      breakpoint: '991px',
+      numVisible: 2,
+      numScroll: 1
     },
     {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1
     }
-]
-  placeClicked(place:any){
+  ]
+  placeClicked(place: any) {
     console.log(place)
   }
 }
