@@ -11,7 +11,7 @@ export class ChatComponentComponent {
   chatIconUrl = 'https://www.logo.wine/a/logo/WhatsApp/WhatsApp-Logo.wine.svg';
 
   openWhatsapp = () => {
-    const Message = "I want to book a travel package";
-    window.open(`https://wa.me/+918491015362?text=${Message}`, "_blank");
+    const Message = "Can't wait to explore travel packages with you! ✨";
+    window.open(`https://wa.me/+919596354066?text=${Message}`, "_blank");
   };
 }
