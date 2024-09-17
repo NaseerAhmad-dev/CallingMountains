@@ -50,10 +50,8 @@ export class DisplayPackageComponent {
 
 
     ngOnInit() {
-        console.log("Inside Ng OnInit in view details component")
         this.fetchPackDetails();
         this.assignImagesToPack();
-
     }
    
     fetchPackDetails() {
@@ -77,6 +75,8 @@ export class DisplayPackageComponent {
         }
         return 'secondary'
     }
+
+
     
     assignImagesToPack() {
 

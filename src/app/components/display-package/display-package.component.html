@@ -2,17 +2,18 @@
 <div class="row mx-auto package-container">
   <div class="d-flex top-row-contianer flex-wrap mx-auto p-3 ">
     <div class="card col-md-6 border-0 left-top-galleria">
-      <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }"
-        [numVisible]="5">
-        <ng-template pTemplate="item" let-item>
-          <img [src]="item.itemImageSrc" style="width: 100%;" />
-        </ng-template>
-        <ng-template pTemplate="thumbnail" let-item>
-          <div class="grid grid-nogutter justify-content-center">
-            <img [src]="item.thumbnailImageSrc" />
-          </div>
-        </ng-template>
-      </p-galleria>
+
+      <p-galleria 
+      [value]="images" 
+      [showIndicators]="true" 
+      [showThumbnails]="false" 
+      [changeItemOnIndicatorHover]="true" 
+      [responsiveOptions]="responsiveOptions" 
+      [containerStyle]="{ 'max-width': '640px' }"> 
+          <ng-template pTemplate="item" let-item>
+              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+          </ng-template>
+  </p-galleria>
     </div>
     <div class="col-md-6 border-0 right-top-highlights rounded" id="description">
       <div class="title-wrapper mt-md-0 mt-sm-2">
@@ -86,7 +87,7 @@
               <div class=" flex-auto flex align-items-center font-medium">
                 <ul class="m-0 p-0">
                   @for(activity of day.dayActivity; track activity){
-                  <li class="pb-1">{{activity}}</li>
+                  <li class="pb-1 ">{{activity}}</li>
                   }
                 </ul>
               </div>
@@ -104,7 +105,7 @@
       @for (inclusion of pack.inclusions; track inclusion){
       <div class="d-flex align-items-center bg-white px-3">
         <i class="pi pi-check-circle mr-4 " style="font-size: 1rem; color:green"></i>
-        <p class="font-medium inclusion-text rounded px-3 py-2">{{inclusion |titlecase }}</p>
+        <p class="font-medium inclusion-text rounded px-3 py-2 mb-0">{{inclusion |titlecase }}</p>
       </div>
 
       }
@@ -113,3 +114,5 @@
 
 </div>
 }
+
+        
