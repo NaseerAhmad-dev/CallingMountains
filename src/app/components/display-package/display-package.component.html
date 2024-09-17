@@ -1,19 +1,13 @@
 @if(!loading){
 <div class="row mx-auto package-container">
   <div class="d-flex top-row-contianer flex-wrap mx-auto p-3 ">
-    <div class="card col-md-6 border-0 left-top-galleria">
-
-      <p-galleria 
-      [value]="images" 
-      [showIndicators]="true" 
-      [showThumbnails]="false" 
-      [changeItemOnIndicatorHover]="true" 
-      [responsiveOptions]="responsiveOptions" 
-      [containerStyle]="{ 'max-width': '640px' }"> 
-          <ng-template pTemplate="item" let-item>
-              <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
-          </ng-template>
-  </p-galleria>
+    <div class="card border-2 col-md-6 border-0 left-top-galleria">
+      <p-galleria [value]="images" [showIndicators]="true" [showThumbnails]="false" [changeItemOnIndicatorHover]="true"
+        [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' , 'border-radius': '2px'}">
+        <ng-template pTemplate="item" let-item>
+          <img [src]="item.itemImageSrc" style="width: 100%; display: block; height: 70%; object-fit: cover;" />
+        </ng-template>
+      </p-galleria>
     </div>
     <div class="col-md-6 border-0 right-top-highlights rounded" id="description">
       <div class="title-wrapper mt-md-0 mt-sm-2">
@@ -114,5 +108,3 @@
 
 </div>
 }
-
-        

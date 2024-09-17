@@ -185,7 +185,7 @@ export class DataserviceService {
         name: "Kashmir Bliss",
         price: "73500",
         image: "assets/banner-2.jpg",
-        description: "Immerse yourself in the tranquil beauty of Ladakh",
+        description: "Experience the serene splendor of Kashmir with our 'Kashmir Bliss' package. Delight in the picturesque landscapes, from the tranquil Dal Lake to the lush meadows of Gulmarg and Pahalgam. Enjoy cultural gems, scenic views, and unforgettable adventures, all while staying in comfort and luxury. A journey of pure bliss awaits!",
         days: 6,
         nights: 5,
         destinations: ["srinagar", "sonamarg", "pahalgam", "gulmarg"],
@@ -194,30 +194,53 @@ export class DataserviceService {
         activities: [
           {
               "day": "Airport to Srinagar",
-              "dayActivity": "Check-in to your hotel in Srinagar and visit the iconic Dal Lake for a Shikara ride. Explore the Mughal Gardens like Shalimar Bagh, Nishat Bagh, and Chashme Shahi. Enjoy local Kashmiri cuisine for dinner."
+              "dayActivity": [
+                  "Check-in to your hotel in Srinagar and unwind.",
+                  "Embark on a Shikara ride on Dal Lake and soak in the tranquil surroundings.",
+                  "Visit the Mughal Gardens: Shalimar Bagh, Nishat Bagh, and Chashme Shahi. Savor local Kashmiri cuisine for dinner."
+              ]
           },
           {
               "day": "Srinagar to Gulmarg",
-              "dayActivity": "Travel to Gulmarg, known for its stunning meadows and adventure activities. Enjoy a cable car ride on the Gulmarg Gondola to see panoramic views. Explore the local market and visit the historic St. Mary's Church. Return to Srinagar in the evening."
+              "dayActivity": [
+                  "Travel to Gulmarg and take a cable car ride on the Gulmarg Gondola for breathtaking panoramic views.",
+                  "Explore the local market and visit the historic St. Mary's Church.",
+                  "Return to Srinagar in the evening."
+              ]
           },
           {
               "day": "Srinagar to Pahalgam",
-              "dayActivity": "Drive to Pahalgam and visit Betaab Valley, renowned for its lush green meadows and scenic beauty. Proceed to Aru Valley, which offers breathtaking views and opportunities for trekking. Visit Chandanwari, the starting point of the Amarnath Yatra pilgrimage. Overnight stay in Pahalgam."
+              "dayActivity": [
+                  "Drive to Pahalgam and visit Betaab Valley for its lush meadows and scenic beauty.",
+                  "Proceed to Aru Valley for stunning views and trekking opportunities.",
+                  "Visit Chandanwari, the starting point of the Amarnath Yatra pilgrimage. Overnight stay in Pahalgam."
+              ]
           },
           {
               "day": "Pahalgam to Srinagar",
-              "dayActivity": "Return to Srinagar and explore local markets like Lal Chowk for shopping. Visit the famous Hazratbal Shrine and Shankaracharya Temple for a cultural experience. Enjoy a leisurely walk along the Boulevard Road by Dal Lake. Overnight stay in Srinagar."
+              "dayActivity": [
+                  "Return to Srinagar and explore Lal Chowk for local shopping.",
+                  "Visit Hazratbal Shrine and Shankaracharya Temple for a cultural experience.",
+                  "Enjoy a leisurely walk along Boulevard Road by Dal Lake. Overnight stay in Srinagar."
+              ]
           },
           {
               "day": "Srinagar to Sonamarg",
-              "dayActivity": "Travel to Sonamarg, known as the 'Meadow of Gold'. Explore the Thajiwas Glacier or enjoy a pony ride. Visit the local trout fish farms and enjoy a picnic by the Sindh River. Stay overnight in Sonamarg or return to Srinagar depending on your schedule."
+              "dayActivity": [
+                  "Travel to Sonamarg, the 'Meadow of Gold'.",
+                  "Explore Thajiwas Glacier or enjoy a pony ride.",
+                  "Visit local trout fish farms and have a picnic by the Sindh River. Depending on your schedule, stay overnight in Sonamarg or return to Srinagar."
+              ]
           },
           {
               "day": "Srinagar to Airport",
-              "dayActivity": "Spend your last morning in Srinagar shopping for souvenirs and enjoying a final stroll by Dal Lake. Depart for the airport with beautiful memories of the Kashmir Valley."
+              "dayActivity": [
+                  "Spend your last morning in Srinagar shopping for souvenirs.",
+                  "Enjoy a final stroll by Dal Lake.",
+                  "Depart for the airport with beautiful memories of the Kashmir Valley."
+              ]
           }
-        ],      
-
+      ],
         "inclusions": [
           "A cosy and hygienic car (Innova/Xylo, or a comparable model) for sightseeing on each of the days specified in the schedule.",
           "According to the timing of your journey, airport pickup and drop-off.",
