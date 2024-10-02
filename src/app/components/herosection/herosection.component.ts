@@ -12,14 +12,14 @@ import { TagModule } from 'primeng/tag';
   styleUrl: './herosection.component.scss'
 })
 export class HerosectionComponent {
-  isScrolled: boolean = false;
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event: Event) {
-    const scrollPosition = window.scrollY;
-    this.isScrolled = scrollPosition > 0; // Change this value to adjust when the blur starts
-  }
-
+  scroll() {
+    window.scrollBy({
+        top: 600,  // Scroll 500px down
+        left: 0,
+        behavior: 'smooth'  // Smooth scrolling
+    });
+}
 
   
 }
