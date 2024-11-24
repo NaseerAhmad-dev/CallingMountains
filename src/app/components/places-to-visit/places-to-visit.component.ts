@@ -16,33 +16,33 @@ export class PlacesToVisitComponent {
   places = [
     {
       name: "Gulmarg",
-      ImgUrl: 'assets/gulmarg.jpg'
+      ImgUrl: 'assets/gulmarg.webp'
     },
     {
       name: "Doodhpathri",
-      ImgUrl: 'assets/doodhpathri.jpg'
+      ImgUrl: 'assets/doodhpathri.webp'
 
     },
     {
       name: "Sonamarg",
-      ImgUrl: 'assets/sonamarg.jpg'
+      ImgUrl: 'assets/sonamarg.webp'
 
     },
     {
       name: "Pahalgam",
-      ImgUrl: 'assets/pahalgam.jpg'
+      ImgUrl: 'assets/pahalgam.webp'
     },
     {
       name: "Srinagar",
-      ImgUrl: 'assets/srinagar.jpg'
+      ImgUrl: 'assets/srinagar.webp'
     },
     {
       name: "Gurez",
-      ImgUrl: 'assets/gurez.jpg'
-    },
+      ImgUrl: 'assets/gurez.webp'
+    }, //done
     {
       name: "Bangus Valley",
-      ImgUrl: 'assets/bangus.jpg'
+      ImgUrl: 'assets/bangus.webp'
     },
   ]
 
