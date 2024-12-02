@@ -72,52 +72,52 @@ export class DisplayPackageComponent {
         this.images = [
             {
                 itemImageSrc: 'assets/d-images/img-1.jpg',
-                alt: 'Description for Image 1',
+                alt:"Magical view of the mountains",
                 title: 'Title 1'
             },
             {
                 itemImageSrc: 'assets/d-images/img-2.jpg',
-                alt: 'Description for Image 2',
+                alt:"Magical view of the mountains",
                 title: 'Title 2'
             },
             {
                 itemImageSrc: 'assets/d-images/img-3.jpg',
-                alt: 'Description for Image 3',
+                alt:"Magical view of the mountains",
                 title: 'Title 3'
             },
             {
                 itemImageSrc: 'assets/d-images/img-4.jpg',
-                alt: 'Description for Image 4',
+                alt:"Magical view of the mountains",
                 title: 'Title 4'
             },
             {
                 itemImageSrc: 'assets/d-images/img-5.jpg',
-                alt: 'Description for Image 5',
+                alt:"Magical view of the mountains",
                 title: 'Title 5'
             },
             {
                 itemImageSrc: 'assets/d-images/img-6.jpg',
-                alt: 'Description for Image 6',
+                alt:"Magical view of the mountains",
                 title: 'Title 6'
             },
             {
                 itemImageSrc: 'assets/d-images/img-8.jpg',
-                alt: 'Description for Image 7',
+                alt:"Magical view of the mountains",
                 title: 'Title 7'
             },
             {
                 itemImageSrc: 'assets/d-images/img-8.jpg',
-                alt: 'Description for Image 7',
+                alt:"Magical view of the mountains",
                 title: 'Title 8'
             },
             {
                 itemImageSrc: 'assets/d-images/img-9.jpg',
-                alt: 'Description for Image 7',
+                alt:"Magical view of the mountains",
                 title: 'Title 9'
             },
             {
                 itemImageSrc: 'assets/d-images/img-10.jpg',
-                alt: 'Description for Image 7',
+                alt:"Magical view of the mountains",
                 title: 'Title 10'
             }
         ]

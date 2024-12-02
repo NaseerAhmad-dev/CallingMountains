@@ -4,8 +4,8 @@
     <div class="card border-2 col-md-6 border-0 left-top-galleria">
       <p-galleria [value]="images" [showIndicators]="true" [showThumbnails]="false" [changeItemOnIndicatorHover]="true"
         [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' , 'border-radius': '2px'}">
-        <ng-template pTemplate="item" let-item>
-          <img [src]="item.itemImageSrc" style="width: 100%; display: block; height: 70%; object-fit: cover;" />
+        <ng-template pTemplate="item" let-item> 
+          <img [src]="item.itemImageSrc" style="width: 100%; display: block; height: 70%; object-fit: cover;" [alt]="item.alt"/>
         </ng-template>
       </p-galleria>
     </div>
