@@ -13,10 +13,10 @@ import { HomeComponetComponent } from "./components/home-componet/home-componet.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, RouterOutlet, ClientReviewsComponent, BannerComponent, PackagesComponent, PlacesToVisitComponent, HerosectionComponent, WebFooterComponent, ChatComponentComponent, HomeComponetComponent],
+  imports: [HeaderComponent, RouterOutlet,  WebFooterComponent, ChatComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'MountainsCalling';
+  title = 'MagicalAreMagical';
 }

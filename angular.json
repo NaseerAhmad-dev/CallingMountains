@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MountainsCalling": {
+    "MagicalAreMagical": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "MountainsCalling:build:production"
+              "buildTarget": "MagicalAreMagical:build:production"
             },
             "development": {
-              "buildTarget": "MountainsCalling:build:development"
+              "buildTarget": "MagicalAreMagical:build:development"
             }
           },
           "defaultConfiguration": "development"

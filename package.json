@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:MountainsCalling": "node dist/mountains-calling/server/server.mjs"
+    "serve:ssr:MagicalAreMagical": "node dist/mountains-calling/server/server.mjs"
   },
   "private": true,
   "dependencies": {
